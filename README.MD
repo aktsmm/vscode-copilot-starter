@@ -114,8 +114,13 @@ Workspace Settings（.vscode/settings.json）
 
 VS Code を初めて起動すると「Get started with VS Code」画面が表示されます。
 
-1. **「Use AI Features」** をクリック → GitHub アカウントでサインイン（Copilot を使うため）
-2. 残りの項目（テーマ選択など）は任意でスキップ可能
+1. **「Use AI features with Copilot for free」** をクリック → GitHub アカウントでサインイン
+2. サインイン完了後、右側に **Copilot Chat パネル** が表示されます
+3. 残りの項目（テーマ選択など）は任意でスキップ可能
+
+![VS Code 初回起動画面](docs/images/vscode-get-started.png)
+
+> 💡 **ポイント**: GitHub にサインインすると、右側に「Build with Agent」パネルが表示され、Copilot Chat が使えるようになります。
 
 ### 2. VS Code 拡張機能の導入
 
