@@ -245,7 +245,7 @@ gh auth status
 # → エラーの場合: gh auth login を実行してログイン
 ```
 
-#### 4. GitHub Copilot が有効
+**4. GitHub Copilot が有効**
 
 VS Code で新規ファイル（例: `test.js`）を作成し、コメントを入力すると Copilot が補完候補を提案します。
 
@@ -254,7 +254,7 @@ VS Code で新規ファイル（例: `test.js`）を作成し、コメントを�
 // ↑ このようなコメントを書くと、Copilot が関数を提案してくれます
 ```
 
-#### 5. Bicep 拡張が動作
+**5. Bicep 拡張が動作**
 
 `.bicep` ファイルを開いてシンタックスハイライト（色分け）が表示されれば OK です。
 
@@ -270,11 +270,11 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 }
 ```
 
-#### 6. MCP サーバーが有効
+**6. MCP サーバーが有効**
 
 Copilot Chat で Azure や Bicep について質問し、MS Learn のドキュメントが参照されれば OK です。
 
-1. `Ctrl + Shift + I`（または `Ctrl + Alt + I`）で Copilot Chat を開く
+1. `Ctrl + Alt + I` で Copilot Chat を開く
 2. 「Bicep でストレージアカウントを作成する方法を教えて」と質問
 3. 回答に MS Learn のリンクが含まれていれば設定完了
 
