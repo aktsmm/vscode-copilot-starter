@@ -1,0 +1,29 @@
+{
+  // Bicep
+  "bicep.enableOutputTimestamps": true,
+
+  // エディタ
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // ファイル
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // ターミナル
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+  // Git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // Copilot（必要に応じて）
+  "chat.tools.autoApprove": false,
+
+  // Bicep 固有の設定
+  "[bicep]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-bicep",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  }
+}

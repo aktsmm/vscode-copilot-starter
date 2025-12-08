@@ -88,37 +88,7 @@ Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Lea
 
 `.github/copilot-chat-modes/azure.chatmode.md` を作成：
 
-```markdown
----
-name: "Azure Mode"
-description: "Azure 開発に特化（MS Learn 参照必須）"
-tools:
-  - run_in_terminal
-  - read_file
-  - replace_string_in_file
-  - mcp_microsoftdocs_microsoft_docs_search
-  - mcp_microsoftdocs_microsoft_docs_fetch
-  - mcp_microsoftdocs_microsoft_code_sample_search
----
-
-# Azure Mode
-
-Azure 関連の開発に特化したモードです。
-
-## ルール
-
-- **必ず MS Learn MCP サーバーを使用して最新ドキュメントを参照すること**
-- 回答にはソース URL を含める
-- Azure CLI / Bicep コードを優先
-
-## MCP ツールの使い分け
-
-| ツール | 用途 |
-|--------|------|
-| `microsoft_docs_search` | ドキュメント検索（概要把握） |
-| `microsoft_docs_fetch` | 特定ページの詳細取得 |
-| `microsoft_code_sample_search` | コードサンプル検索 |
-```
+📄 [samples/azure.chatmode.md](../samples/azure.chatmode.md)
 
 **使い方**: Copilot Chat 画面上部のモードセレクタから「Azure Mode」を選択
 
@@ -126,34 +96,7 @@ Azure 関連の開発に特化したモードです。
 
 `.github/agents/azure-expert.agent.md` を作成：
 
-```markdown
----
-name: "Azure Expert"
-description: "Azure の専門家（MS Learn 参照必須）"
-tools:
-  - run_in_terminal
-  - read_file
-  - replace_string_in_file
-  - mcp_microsoftdocs_microsoft_docs_search
-  - mcp_microsoftdocs_microsoft_docs_fetch
----
-
-# Azure Expert Agent
-
-あなたは Azure の専門家です。
-
-## 必須ルール
-
-1. **Azure 関連の質問には必ず `mcp_microsoftdocs` ツールで MS Learn を検索すること**
-2. 回答には必ずソース URL を明記
-3. 古い情報や推測で回答しない
-
-## 検索の流れ
-
-1. `microsoft_docs_search` で関連ドキュメントを検索
-2. 必要に応じて `microsoft_docs_fetch` で詳細を取得
-3. 検索結果を元に回答を構成
-```
+📄 [samples/azure-expert.agent.md](../samples/azure-expert.agent.md)
 
 **使い方**: Copilot Chat で `@azure-expert` と入力
 
@@ -194,24 +137,7 @@ GitHub Copilot の動作をリポジトリ固有にカスタマイズできま�
 
 **設定場所**: `.github/copilot-instructions.md`
 
-```markdown
-# Repository Copilot Instructions
-
-## コミュニケーションスタイル
-
-- 日本語で回答する
-- 簡潔で実行可能な返信を優先
-
-## 許可される操作
-
-- ファイルの読み取り・編集
-- ターミナルでのコマンド実行（`az`, `gh`, `git` など）
-
-## 禁止される操作
-
-- 機密情報のコミット
-- `main` ブランチへの直接プッシュ
-```
+📄 [samples/copilot-instructions.md](../samples/copilot-instructions.md)
 
 ### Instructions（ドメイン指示）
 
@@ -221,18 +147,7 @@ GitHub Copilot の動作をリポジトリ固有にカスタマイズできま�
 
 **例**: `.github/instructions/bicep.instructions.md`
 
-```markdown
----
-applyTo: "**/*.bicep"
----
-
-# Bicep ファイル用の指示
-
-- モジュール分割を推奨（`modules/` ディレクトリ配下に配置）
-- パラメータには `@description` デコレータで説明を付与
-- シークレットは `@secure()` デコレータを使用
-- `existing` キーワードで既存リソース参照
-```
+📄 [samples/bicep.instructions.md](../samples/bicep.instructions.md)
 
 > 💡 `applyTo` で glob パターンを指定すると、そのパターンに一致するファイルを編集する際に自動適用されます。
 
@@ -244,21 +159,7 @@ applyTo: "**/*.bicep"
 
 **例**: `.github/prompts/bicep-review.prompt.md`
 
-```markdown
----
-mode: "agent"
-description: "Bicep ファイルをレビューする"
----
-
-以下の観点で Bicep ファイルをレビューしてください：
-
-1. **セキュリティ**: シークレットが適切に保護されているか
-2. **命名規則**: リソース名が一貫しているか
-3. **モジュール化**: 再利用可能な構造になっているか
-4. **パラメータ**: 説明とデフォルト値が適切か
-
-対象ファイル: ${file}
-```
+📄 [samples/bicep-review.prompt.md](../samples/bicep-review.prompt.md)
 
 **使い方**: Copilot Chat で `/bicep-review` と入力（ファイル名から `.prompt.md` を除いた名前）
 
@@ -270,37 +171,7 @@ description: "Bicep ファイルをレビューする"
 
 **例**: `.github/agents/bicep-expert.agent.md`
 
-```markdown
----
-name: "Bicep Expert"
-description: "Azure Bicep の専門家エージェント"
-tools:
-  - run_in_terminal
-  - read_file
-  - replace_string_in_file
----
-
-# Bicep Expert Agent
-
-あなたは Azure Bicep の専門家です。以下のガイドラインに従ってください：
-
-## 専門分野
-
-- Bicep テンプレートの作成・レビュー
-- ARM テンプレートから Bicep への変換
-- Azure リソースのベストプラクティス
-
-## 使用するコマンド
-
-- `az bicep build` - 構文チェック
-- `az deployment group what-if` - デプロイ前確認
-- `az bicep decompile` - ARM から変換
-
-## 回答スタイル
-
-- コード例を必ず含める
-- MS Learn のドキュメントを参照する
-```
+📄 [samples/bicep-expert.agent.md](../samples/bicep-expert.agent.md)
 
 **使い方**: Copilot Chat で `@bicep-expert` と入力
 
@@ -312,32 +183,7 @@ Copilot Chat の動作モードをカスタマイズできます。
 
 **例**: `.github/copilot-chat-modes/infra.chatmode.md`
 
-```markdown
----
-name: "Infrastructure Mode"
-description: "インフラ構築に特化したモード"
-tools:
-  - run_in_terminal
-  - read_file
-  - mcp_microsoftdocs_microsoft_docs_search
----
-
-# Infrastructure Mode
-
-Azure インフラストラクチャの構築・管理に特化したモードです。
-
-## 有効なツール
-
-- ターミナル実行（Azure CLI）
-- ファイル読み取り
-- MS Learn ドキュメント検索
-
-## 応答ガイドライン
-
-- Bicep コードを優先
-- `--what-if` でのデプロイ前確認を推奨
-- セキュリティベストプラクティスを常に考慮
-```
+📄 [samples/infra.chatmode.md](../samples/infra.chatmode.md)
 
 **使い方**: Copilot Chat のモードセレクタから選択
 
@@ -347,42 +193,9 @@ Azure インフラストラクチャの構築・管理に特化したモード�
 
 `.vscode/settings.json` に追加すると便利な設定：
 
-```json
-{
-  // Bicep
-  "bicep.enableOutputTimestamps": true,
+📄 [samples/recommended-settings.jsonc](../samples/recommended-settings.jsonc)
 
-  // エディタ
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-  // ファイル
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
-
-  // ターミナル
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-
-  // Git
-  "git.autofetch": true,
-  "git.confirmSync": false,
-
-  // Copilot（必要に応じて）
-  "chat.tools.autoApprove": false
-}
-```
-
-### Bicep 固有の設定
-
-```json
-{
-  "[bicep]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-bicep",
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  }
-}
-```
+> 💡 このファイルをコピーして `.vscode/settings.json` に貼り付けてください（JSONC 形式なのでコメントは VS Code で有効です）。
 
 ---
 
