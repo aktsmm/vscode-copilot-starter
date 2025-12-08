@@ -16,6 +16,7 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
   - [MCP サーバー (MS Learn) の設定](#6️⃣-mcp-サーバー-ms-learn-の設定)
   - [準備完了の確認](#️-準備完了の確認)
 - [エンハンス設定（上級者向け）](docs/advanced-settings.md)
+- [Git & GitHub 基礎ガイド](docs/git-basics.md)
 - [参考リンク](#-参考リンク)
 - [お問い合わせ](#-お問い合わせ)
 
@@ -27,19 +28,19 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 
 ### 💻 コマンドの実行場所
 
-本ガイドのコマンドは **PowerShell** で実行します。
+本ガイドのコマンドは **PowerShell 5.1 以上** で実行します（Windows 10/11 は標準搭載）。
 
-| 実行場所               | 開き方                                                                    |
-| ---------------------- | ------------------------------------------------------------------------- |
-| **VS Code ターミナル** | VS Code で `` Ctrl + ` `` または メニュー → ターミナル → 新しいターミナル |
-| **Windows PowerShell** | スタートメニュー → 「PowerShell」で検索                                   |
-| **Windows Terminal**   | スタートメニュー → 「Terminal」で検索（推奨）                             |
+| 実行場所               | 開き方                                                                |
+| ---------------------- | --------------------------------------------------------------------- |
+| **VS Code ターミナル** | VS Code で `Ctrl + @` または メニュー → ターミナル → 新しいターミナル |
+| **Windows PowerShell** | スタートメニュー → 「PowerShell」で検索                               |
+| **Windows Terminal**   | スタートメニュー → 「Terminal」で検索（推奨）                         |
 
 #### VS Code ターミナルの開き方
 
 1. VS Code を開く
 2. 以下のいずれかでターミナルを開く：
-   - キーボード: `` Ctrl + ` ``（バッククォート / `@` キー）
+   - キーボード: `Ctrl + @`（日本語キーボード）または `` Ctrl + ` ``（英語キーボード）
    - メニュー: **表示** → **ターミナル**
    - コマンドパレット: `Ctrl + Shift + P` → 「Terminal: Create New Terminal」
 
@@ -89,6 +90,8 @@ Workspace Settings（.vscode/settings.json）
 | Copilot によるコード補完 | GitHub Copilot 拡張機能導入 & GitHub ログイン | コメントを書くと補完が動く                        |
 | Azure 操作               | Azure CLI インストール & `az login`           | `az login` でログインでき、リソース作成権限がある |
 | Git 管理                 | Git CLI インストール                          | `git --version` が動く                            |
+| GitHub 操作              | GitHub CLI インストール & `gh auth login`     | `gh auth status` が動く                           |
+| MS Learn 参照            | MCP サーバー設定                              | Copilot Chat で MS Learn が参照される             |
 
 > ⚠️ **注意**: GitHub Copilot の利用には[ライセンス](https://github.com/features/copilot)（個人 / Business / Enterprise）が必要です。
 
@@ -115,8 +118,10 @@ Workspace Settings（.vscode/settings.json）
 | [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)                          | コードフォーマッター（JSON, YAML, Markdown 整形）     |
 | [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)                                  | Git 履歴・blame の可視化                              |
 
+**VS Code ターミナル（PowerShell）で実行**:
+
 ```powershell
-# PowerShell で一括インストール
+# 拡張機能を一括インストール
 code --install-extension ms-azuretools.vscode-bicep
 code --install-extension GitHub.copilot
 code --install-extension GitHub.copilot-chat
@@ -128,6 +133,8 @@ code --install-extension esbenp.prettier-vscode
 code --install-extension eamodio.gitlens
 ```
 
+> 💡 **GitHub Copilot のログイン**: 拡張機能インストール後、VS Code 左下の人型アイコンをクリックして GitHub アカウントでサインインしてください。
+
 ### 3️⃣ Azure CLI のインストール
 
 公式ドキュメントを参照：  
@@ -135,6 +142,8 @@ code --install-extension eamodio.gitlens
 
 > ⚠️ **管理者権限**: Windows インストーラー（MSI）を使う場合は管理者権限が必要です。  
 > 💡 インストール後は **VS Code を再起動** してください。
+
+**VS Code ターミナル（PowerShell）で実行**:
 
 ```powershell
 # インストール確認
@@ -152,6 +161,8 @@ az login
 > 💡 インストール時に「**Git from the command line and also from 3rd-party software**」を選択してください（PATH に追加されます）。  
 > 💡 インストール後は **VS Code を再起動** してください。
 
+**VS Code ターミナル（PowerShell）で実行**:
+
 ```powershell
 # インストール確認
 git --version
@@ -160,6 +171,8 @@ git --version
 ### 5️⃣ GitHub CLI のインストール
 
 🔗 https://cli.github.com/
+
+**VS Code ターミナル（PowerShell）で実行**:
 
 ```powershell
 # インストール確認
@@ -204,20 +217,24 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 以下がすべて OK なら準備完了です。
 
+**VS Code ターミナル（PowerShell）で実行**:
+
 ```powershell
 # 1. Azure CLI が使える
-az account show
+az account show --query "{Subscription:name, User:user.name}" -o table
+# → エラーの場合: az login を実行してログイン
 
-# 2. Git CLI が使える
+# 2. Git CLI が使える（git version 2.x.x のようにバージョンが表示される）
 git --version
 
 # 3. GitHub CLI が使える
 gh auth status
+# → エラーの場合: gh auth login を実行してログイン
 ```
 
 #### 4. GitHub Copilot が有効
 
-VS Code で任意のファイルを開き、コメントを入力すると補完候補が表示されます。
+VS Code で新規ファイル（例: `test.js`）を作成し、コメントを入力すると Copilot が補完候補を提案します。
 
 ```javascript
 // 1から10までの合計を計算する関数
@@ -244,7 +261,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 
 Copilot Chat で Azure や Bicep について質問し、MS Learn のドキュメントが参照されれば OK です。
 
-1. `Ctrl + Shift + I` で Copilot Chat を開く
+1. `Ctrl + Shift + I`（または `Ctrl + Alt + I`）で Copilot Chat を開く
 2. 「Bicep でストレージアカウントを作成する方法を教えて」と質問
 3. 回答に MS Learn のリンクが含まれていれば設定完了
 
@@ -255,6 +272,7 @@ Copilot Chat で Azure や Bicep について質問し、MS Learn のドキュ�
 - [Bicep ドキュメント](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/)
 - [GitHub Copilot ドキュメント](https://docs.github.com/ja/copilot)
 - [Azure CLI ドキュメント](https://learn.microsoft.com/ja-jp/cli/azure/)
+- [GitHub CLI ドキュメント](https://cli.github.com/manual/)
 
 ---
 
