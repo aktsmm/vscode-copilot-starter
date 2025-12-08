@@ -24,6 +24,16 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 
 以下の手順でセットアップを進めてください。最後の「[準備完了の確認](#準備完了の確認)」で動作確認ができます。
 
+### 📋 前提条件
+
+| 必要なもの                                            | 用途                                  | 備考                                                   |
+| ----------------------------------------------------- | ------------------------------------- | ------------------------------------------------------ |
+| [GitHub アカウント](https://github.com/signup)        | Copilot 利用、Git 操作                | 無料で作成可能                                         |
+| [GitHub Copilot ライセンス](https://github.com/features/copilot) | AI コード補完                         | 個人 / Business / Enterprise（有料）                   |
+| [Azure アカウント](https://azure.microsoft.com/ja-jp/free/) | Bicep デプロイ、Azure リソース操作    | 任意（なくても Bicep の編集・構文チェックは可能）      |
+
+> 💡 **GitHub Copilot Free** も利用可能です（機能制限あり）。詳細は [Copilot 料金ページ](https://github.com/features/copilot) を参照してください。
+
 ### 💻 コマンドの実行場所
 
 本ガイドのコマンドは **PowerShell 5.1 以上** で実行します（Windows 10/11 は標準搭載）。
@@ -173,7 +183,7 @@ Prettier でファイル保存時に自動整形されるように設定しま�
 
 ### 3. CLI ツールのインストール（Azure CLI / Git / GitHub CLI）
 
-> ⚠️ **Azure CLI について**: Azure CLI は Azure リソースの操作に使用します。Azure アカウントがない場合はインストール不要です。
+> ⚠️ **Azure CLI について**: Azure CLI は Azure リソースの操作に使用します。Azure アカウントがない場合はインストール不要ですが、**Bicep テンプレートのデプロイができません**（構文チェックや編集は可能）。
 
 > ⚠️ **管理者権限の PowerShell で実行してください**（VS Code ターミナルではなく）
 
