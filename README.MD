@@ -101,12 +101,12 @@ Workspace Settings（.vscode/settings.json）
 
 インストール時に以下のオプションを選択してください（※英語環境での表記）：
 
-| オプション | 推奨 | 説明 |
-|-----------|:----:|------|
-| Add "Open with Code" action to Windows Explorer **file** context menu | ✅ | ファイル右クリック→「Code で開く」 |
-| Add "Open with Code" action to Windows Explorer **directory** context menu | ✅ | フォルダ右クリック→「Code で開く」 |
-| Register Code as an editor for supported file types | ✅ | テキストファイルをダブルクリックで VS Code が開く |
-| **Add to PATH** | ✅ 必須 | ターミナルから `code` コマンドが使える |
+| オプション                                                                 |  推奨   | 説明                                              |
+| -------------------------------------------------------------------------- | :-----: | ------------------------------------------------- |
+| Add "Open with Code" action to Windows Explorer **file** context menu      |   ✅    | ファイル右クリック →「Code で開く」               |
+| Add "Open with Code" action to Windows Explorer **directory** context menu |   ✅    | フォルダ右クリック →「Code で開く」               |
+| Register Code as an editor for supported file types                        |   ✅    | テキストファイルをダブルクリックで VS Code が開く |
+| **Add to PATH**                                                            | ✅ 必須 | ターミナルから `code` コマンドが使える            |
 
 > 💡 **Add to PATH** は必須です。これがないと拡張機能の一括インストールコマンドが動きません。
 
@@ -119,24 +119,11 @@ VS Code を初めて起動すると「Get started with VS Code」画面が表示
 
 ### 2. VS Code 拡張機能の導入
 
-#### 日本語化（任意）
-
-VS Code を日本語化したい場合は、以下の拡張機能をインストールしてください。
-
-**VS Code ターミナル（PowerShell）で実行**:
-
-```powershell
-code --install-extension MS-CEINTL.vscode-language-pack-ja
-```
-
-> 💡 インストール後、VS Code を再起動すると日本語に切り替わります。切り替わらない場合は `Ctrl + Shift + P` → 「Configure Display Language」→「ja」を選択してください。
-
-#### 必須拡張機能
-
 以下の拡張機能を VS Code にインストールしてください。
 
 | 拡張機能                                                                                                        | 用途                                                  |
 | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| [Japanese Language Pack](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja) | VS Code の日本語化                                    |
 | [Bicep](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep)                         | Bicep ファイルの編集・バリデーション                  |
 | [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)                            | AI によるコード補完                                   |
 | [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)                  | AI とのチャットベース開発                             |
@@ -151,6 +138,7 @@ code --install-extension MS-CEINTL.vscode-language-pack-ja
 
 ```powershell
 # 拡張機能を一括インストール
+code --install-extension MS-CEINTL.vscode-language-pack-ja
 code --install-extension ms-azuretools.vscode-bicep
 code --install-extension GitHub.copilot
 code --install-extension GitHub.copilot-chat
@@ -161,6 +149,8 @@ code --install-extension redhat.vscode-yaml
 code --install-extension esbenp.prettier-vscode
 code --install-extension eamodio.gitlens
 ```
+
+> 💡 **日本語化**: Japanese Language Pack インストール後、VS Code を再起動すると日本語に切り替わります。切り替わらない場合は `Ctrl + Shift + P` → 「Configure Display Language」→「ja」を選択してください。
 
 > 💡 **GitHub Copilot のログイン**: 拡張機能インストール後、VS Code 左下の人型アイコンをクリックして GitHub アカウントでサインインしてください。
 
