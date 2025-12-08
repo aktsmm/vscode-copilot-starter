@@ -99,7 +99,16 @@ Workspace Settings（.vscode/settings.json）
 公式サイトからダウンロード・インストール：  
 🔗 https://code.visualstudio.com/
 
-> 💡 インストール時に「**Add to PATH**」にチェックを入れると、ターミナルから `code` コマンドが使えるようになります。
+インストール時に以下のオプションを選択してください：
+
+| オプション | 推奨 | 説明 |
+|-----------|:----:|------|
+| Add "Open with Code" action to Windows Explorer **file** context menu | ✅ | ファイル右クリック→「Code で開く」 |
+| Add "Open with Code" action to Windows Explorer **directory** context menu | ✅ | フォルダ右クリック→「Code で開く」 |
+| Register Code as an editor for supported file types | ✅ | テキストファイルをダブルクリックで VS Code が開く |
+| **Add to PATH** | ✅ 必須 | ターミナルから `code` コマンドが使える |
+
+> 💡 **Add to PATH** は必須です。これがないと拡張機能の一括インストールコマンドが動きません。
 
 ### 2. VS Code 拡張機能の導入
 
