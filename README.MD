@@ -139,7 +139,7 @@ VS Code を初めて起動すると「Get started with VS Code」画面が表示
 | [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)                          | コードフォーマッター（JSON, YAML, Markdown 整形）     |
 | [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)                                  | Git 履歴・blame の可視化                              |
 
-**VS Code ターミナル（PowerShell）で実行**:
+**VS Code ターミナル（PowerShell）で実行**（`Ctrl + @` でターミナルを開く）:
 
 ```powershell
 # 拡張機能を一括インストール
