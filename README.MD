@@ -3,6 +3,8 @@
 VS Code と GitHub Copilot を活用した Azure 開発環境のセットアップガイドです。  
 Bicep による IaC（Infrastructure as Code）開発を AI アシスタントでスムーズに始められます。
 
+> 📸 **注意**: 本ガイドのスクリーンショットは **2025 年 12 月時点** のものです。UI や手順が変更されている場合は、適宜読み替えて公式ドキュメントを参照してください。
+
 ---
 
 ## 📑 目次
@@ -228,10 +230,10 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 | 設定レベル             | リンク                                                                                                                                                                                                            | 説明                                                     |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| **Workspace Settings** | [Install (Workspace)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D&scope=workspace) | ⭐ **推奨**: このプロジェクトのみで有効                  |
-| **User Settings**      | [Install (User)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D)                      | 全ワークスペースで有効（Microsoft 技術をよく使う人向け） |
+| **User Settings**      | [Install (User)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D)                      | ⭐ **推奨**: 全ワークスペースで有効（Azure/Microsoft 技術を使う人向け） |
+| **Workspace Settings** | [Install (Workspace)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D&scope=workspace) | このプロジェクトのみで有効                  |
 
-> 💡 **推奨理由**: Workspace Settings にすると `.vscode/mcp.json` がリポジトリに含まれ、チームメンバーも同じ設定を共有できます。
+> 💡 **推奨理由**: Azure や Microsoft 製品を扱う場面では、Copilot Chat が MS Learn の最新ドキュメントを参照できると回答精度が大幅に向上します。
 
 > 📖 詳細: [MS Learn MCP Server - GitHub](https://github.com/microsoftdocs/mcp)
 
