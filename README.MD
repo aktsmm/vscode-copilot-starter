@@ -10,11 +10,16 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 ## 📑 目次
 
 - [事前準備（必須）](#事前準備必須)
-  - [VS Code のインストール](#1-vs-code-のインストール)
-  - [VS Code 拡張機能の導入](#2-vs-code-拡張機能の導入)
-  - [CLI ツールのインストール](#3-cli-ツールのインストールazure-cli--git--github-cli)
-  - [MCP サーバー (MS Learn) の設定](#4-mcp-サーバー-ms-learn-の設定)
+  - [前提条件](#-前提条件)
+  - [準備のゴール](#-準備のゴール)
+  - [1. VS Code のインストール](#1-vs-code-のインストール)
+  - [2. VS Code 拡張機能の導入](#2-vs-code-拡張機能の導入)
+  - [3. CLI ツールのインストール](#3-cli-ツールのインストールazure-cli--git--github-cli)
+  - [4. MCP サーバー (MS Learn) の設定](#4-mcp-サーバー-ms-learn-の設定)
   - [準備完了の確認](#準備完了の確認)
+- [補足情報](#補足情報)
+  - [コマンドの実行場所](#-コマンドの実行場所)
+  - [VS Code 設定の優先順位](#-vs-code-設定の優先順位)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
 - [参考リンク](#参考リンク)
 
@@ -34,7 +39,20 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 
 > 💡 **GitHub Copilot Free** も利用可能です（機能制限あり）。詳細は [Copilot 料金ページ](https://github.com/features/copilot) を参照してください。
 
-### 💻 コマンドの実行場所
+### 🎯 準備のゴール
+
+| 目的                     | 作業内容                                      | 判定基準                                          |
+| ------------------------ | --------------------------------------------- | ------------------------------------------------- |
+| VS Code での Bicep 開発  | VS Code インストール & Bicep 拡張機能導入     | `.bicep` ファイルでシンタックスハイライトされる   |
+| Copilot によるコード補完 | GitHub Copilot 拡張機能導入 & GitHub ログイン | コメントを書くと補完が動く                        |
+| Azure 操作               | Azure CLI インストール & `az login`           | `az login` でログインでき、リソース作成権限がある |
+| Git 管理                 | Git CLI インストール                          | `git --version` が動く                            |
+| GitHub 操作              | GitHub CLI インストール & `gh auth login`     | `gh auth status` が動く                           |
+| MS Learn 参照            | MCP サーバー設定                              | Copilot Chat で MS Learn が参照される             |
+
+> ⚠️ **注意**: GitHub Copilot の利用には[ライセンス](https://github.com/features/copilot)（個人 / Business / Enterprise）が必要です。
+
+### 1. VS Code のインストール
 
 本ガイドのコマンドは **PowerShell 5.1 以上** で実行します（Windows 10/11 は標準搭載）。
 
@@ -89,21 +107,6 @@ Workspace Settings（.vscode/settings.json）
 > - **Workspace Settings**: プロジェクト共通ルール（フォーマッター、Bicep 設定など）
 >
 > チームで共有する `.vscode/settings.json` には、プロジェクトに必要な設定だけ書くのがベストです。
-
-### 🎯 準備のゴール
-
-| 目的                     | 作業内容                                      | 判定基準                                          |
-| ------------------------ | --------------------------------------------- | ------------------------------------------------- |
-| VS Code での Bicep 開発  | VS Code インストール & Bicep 拡張機能導入     | `.bicep` ファイルでシンタックスハイライトされる   |
-| Copilot によるコード補完 | GitHub Copilot 拡張機能導入 & GitHub ログイン | コメントを書くと補完が動く                        |
-| Azure 操作               | Azure CLI インストール & `az login`           | `az login` でログインでき、リソース作成権限がある |
-| Git 管理                 | Git CLI インストール                          | `git --version` が動く                            |
-| GitHub 操作              | GitHub CLI インストール & `gh auth login`     | `gh auth status` が動く                           |
-| MS Learn 参照            | MCP サーバー設定                              | Copilot Chat で MS Learn が参照される             |
-
-> ⚠️ **注意**: GitHub Copilot の利用には[ライセンス](https://github.com/features/copilot)（個人 / Business / Enterprise）が必要です。
-
-### 1. VS Code のインストール
 
 公式サイトからダウンロード・インストール：  
 🔗 https://code.visualstudio.com/
@@ -344,6 +347,66 @@ Copilot Chat で MCP ツールを呼び出せれば OK です。
    ```
 
 3. `#MicrosoftDocs` を入力したパターンで MCP サーバーが呼び出されていれば OK
+
+---
+
+## 補足情報
+
+### 💻 コマンドの実行場所
+
+本ガイドのコマンドは **PowerShell 5.1 以上** で実行します（Windows 10/11 は標準搭載）。
+
+| 実行場所               | 開き方                                                                |
+| ---------------------- | --------------------------------------------------------------------- |
+| **VS Code ターミナル** | VS Code で `Ctrl + @` または メニュー → ターミナル → 新しいターミナル |
+| **Windows PowerShell** | スタートメニュー → 「PowerShell」で検索                               |
+| **Windows Terminal**   | スタートメニュー → 「Terminal」で検索（⭐ 推奨）                      |
+
+#### VS Code ターミナルの開き方
+
+1. VS Code を開く
+2. 以下のいずれかでターミナルを開く：
+   - キーボード: `Ctrl + @`（日本語キーボード）または `` Ctrl + ` ``（英語キーボード）
+   - メニュー: **表示** → **ターミナル**
+   - コマンドパレット: `Ctrl + Shift + P` → 「Terminal: Create New Terminal」
+
+![VS Code ターミナル](docs/images/vscode-install-extensions.png)
+
+> ⭐ **推奨**: VS Code ターミナルを使うと、コード編集とコマンド実行を同じウィンドウで行えて便利です。
+
+> ⚠️ **実行ポリシー**: スクリプト実行がブロックされる場合は、以下を実行してください。
+>
+> ```powershell
+> Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+> ```
+
+> 💡 **管理者権限について**: 日常のコマンド実行には管理者権限は不要です。ただし、Azure CLI や Git のインストール時には管理者権限が必要です。
+
+> 💡 **PATH の反映**: CLI ツールをインストールした後は **VS Code を再起動** してください。PATH が反映されず、コマンドが見つからない場合があります。
+
+### 📁 VS Code 設定の優先順位
+
+本ガイドでは「User Settings」と「Workspace Settings」の 2 種類の設定場所が登場します。
+
+| 設定場所               | ファイル                            | 適用範囲                         |
+| ---------------------- | ----------------------------------- | -------------------------------- |
+| **User Settings**      | `%APPDATA%\Code\User\settings.json` | 全ワークスペース共通（個人設定） |
+| **Workspace Settings** | `.vscode/settings.json`             | このプロジェクトのみ             |
+
+**優先順位**: Workspace Settings が User Settings より優先されます。
+
+```
+User Settings（グローバル）
+    ↓ 上書き
+Workspace Settings（.vscode/settings.json）
+```
+
+> 💡 **使い分けのコツ**:
+>
+> - **User Settings**: 個人の好み（フォントサイズ、テーマなど）
+> - **Workspace Settings**: プロジェクト共通ルール（フォーマッター、Bicep 設定など）
+>
+> チームで共有する `.vscode/settings.json` には、プロジェクトに必要な設定だけ書くのがベストです。
 
 ---
 
