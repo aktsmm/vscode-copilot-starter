@@ -30,7 +30,7 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 | ---------------------- | --------------------------------------------------------------------- |
 | **VS Code ターミナル** | VS Code で `Ctrl + @` または メニュー → ターミナル → 新しいターミナル |
 | **Windows PowerShell** | スタートメニュー → 「PowerShell」で検索                               |
-| **Windows Terminal**   | スタートメニュー → 「Terminal」で検索（推奨）                         |
+| **Windows Terminal**   | スタートメニュー → 「Terminal」で検索（⭐ 推奨）                      |
 
 #### VS Code ターミナルの開き方
 
@@ -42,7 +42,7 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 
 ![VS Code ターミナル](docs/images/vscode-install-extensions.png)
 
-> 💡 **推奨**: VS Code ターミナルを使うと、コード編集とコマンド実行を同じウィンドウで行えて便利です。
+> ⭐ **推奨**: VS Code ターミナルを使うと、コード編集とコマンド実行を同じウィンドウで行えて便利です。
 
 > ⚠️ **実行ポリシー**: スクリプト実行がブロックされる場合は、以下を実行してください。
 >
@@ -198,7 +198,7 @@ gh auth login
 
 Copilot Chat から MS Learn ドキュメントを参照できるようになります。
 
-#### 方法 1: ワンクリックインストール（推奨）
+#### 方法 1: ワンクリックインストール（⭐ 推奨）
 
 以下のリンクをクリックすると、VS Code が開いてインストール画面が表示されます。**Install** ボタンをクリックして設定完了です。
 
