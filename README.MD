@@ -159,7 +159,11 @@ code --install-extension eamodio.gitlens
 
 ### 3. CLI ツールのインストール（Azure CLI / Git / GitHub CLI）
 
-**PowerShell で実行**:
+> ⚠️ **管理者権限の PowerShell で実行してください**（VS Code ターミナルではなく）
+
+スタートメニュー → 「PowerShell」を右クリック → **「管理者として実行」** で開いてください。
+
+![PowerShell 管理者として実行](docs/images/powershell-run-as-admin.png)
 
 ```powershell
 # Azure CLI, Git, GitHub CLI を一括インストール
@@ -176,7 +180,7 @@ winget install GitHub.cli
 
 > 💡 インストール後は **VS Code を再起動** してください（PATH を反映するため）。
 
-**インストール確認 & ログイン**:
+**インストール確認 & ログイン**（VS Code ターミナルまたは通常の PowerShell で OK）:
 
 ```powershell
 # バージョン確認
