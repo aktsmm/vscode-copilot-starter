@@ -50,7 +50,7 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 > ```
 
-> 💡 **管理者権限について**: 日常のコマンド実行には管理者権限は不要です。ただし、Azure CLI や Git のインストール時には管理者権限が必要な場合があります。
+> 💡 **管理者権限について**: 日常のコマンド実行には管理者権限は不要です。ただし、Azure CLI や Git のインストール時には管理者権限が必要です。
 
 > 💡 **PATH の反映**: CLI ツールをインストールした後は **VS Code を再起動** してください。PATH が反映されず、コマンドが見つからない場合があります。
 
@@ -179,7 +179,7 @@ winget install GitHub.cli
 
 > 💡 インストール後は **VS Code を再起動** してください（PATH を反映するため）。
 
-**インストール確認 & ログイン**（VS Code ターミナルまたは通常の PowerShell で OK）:
+**インストール確認 & ログイン**（VS Code ターミナル `Ctrl + @` で実行）:
 
 ```powershell
 # バージョン確認
@@ -200,11 +200,13 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 #### 方法 1: ワンクリックインストール（推奨）
 
-以下のリンクをクリックすると、VS Code が開いて自動的に設定されます。
+以下のリンクをクリックすると、VS Code が開いてインストール画面が表示されます。**Install** ボタンをクリックして設定完了です。
+
+![MCP サーバーインストール画面](docs/images/mcp-install.png)
 
 | 設定レベル             | リンク                                                                                                                                                                                                            | 説明                                                     |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| **Workspace Settings** | [Install (Workspace)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D&scope=workspace) | **推奨**: このプロジェクトのみで有効                     |
+| **Workspace Settings** | [Install (Workspace)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D&scope=workspace) | ⭐ **推奨**: このプロジェクトのみで有効                  |
 | **User Settings**      | [Install (User)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D)                      | 全ワークスペースで有効（Microsoft 技術をよく使う人向け） |
 
 > 💡 **推奨理由**: Workspace Settings にすると `.vscode/mcp.json` がリポジトリに含まれ、チームメンバーも同じ設定を共有できます。
