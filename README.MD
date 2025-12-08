@@ -132,8 +132,7 @@ VS Code を初めて起動すると「Get started with VS Code」画面が表示
 | [Bicep](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep)                         | Bicep ファイルの編集・バリデーション                  |
 | [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)                            | AI によるコード補完                                   |
 | [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)                  | AI とのチャットベース開発                             |
-| [Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)                    | Azure アカウント管理                                  |
-| [Azure Resources](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureresourcegroups) | Azure リソースのブラウズ                              |
+| [Azure Resources](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureresourcegroups) | Azure リソースのブラウズ・管理                        |
 | [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)                       | Azure CLI コマンドのシンタックスハイライト・実行      |
 | [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)                                  | YAML ファイルのバリデーション（CI/CD パイプライン等） |
 | [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)                          | コードフォーマッター（JSON, YAML, Markdown 整形）     |
@@ -147,13 +146,14 @@ code --install-extension MS-CEINTL.vscode-language-pack-ja
 code --install-extension ms-azuretools.vscode-bicep
 code --install-extension GitHub.copilot
 code --install-extension GitHub.copilot-chat
-code --install-extension ms-vscode.azure-account
 code --install-extension ms-azuretools.vscode-azureresourcegroups
 code --install-extension ms-vscode.azurecli
 code --install-extension redhat.vscode-yaml
 code --install-extension esbenp.prettier-vscode
 code --install-extension eamodio.gitlens
 ```
+
+![拡張機能の一括インストール](docs/images/vscode-install-extensions.png)
 
 > 💡 **日本語化**: Japanese Language Pack インストール後、VS Code を再起動すると日本語に切り替わります。切り替わらない場合は `Ctrl + Shift + P` → 「Configure Display Language」→「ja」を選択してください。
 
