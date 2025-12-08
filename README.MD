@@ -110,7 +110,28 @@ Workspace Settings（.vscode/settings.json）
 
 > 💡 **Add to PATH** は必須です。これがないと拡張機能の一括インストールコマンドが動きません。
 
+#### 初回起動時の設定
+
+VS Code を初めて起動すると「Get started with VS Code」画面が表示されます。
+
+1. **「Use AI Features」** をクリック → GitHub アカウントでサインイン（Copilot を使うため）
+2. 残りの項目（テーマ選択など）は任意でスキップ可能
+
 ### 2. VS Code 拡張機能の導入
+
+#### 日本語化（任意）
+
+VS Code を日本語化したい場合は、以下の拡張機能をインストールしてください。
+
+**VS Code ターミナル（PowerShell）で実行**:
+
+```powershell
+code --install-extension MS-CEINTL.vscode-language-pack-ja
+```
+
+> 💡 インストール後、VS Code を再起動すると日本語に切り替わります。切り替わらない場合は `Ctrl + Shift + P` → 「Configure Display Language」→「ja」を選択してください。
+
+#### 必須拡張機能
 
 以下の拡張機能を VS Code にインストールしてください。
 
