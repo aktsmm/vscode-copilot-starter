@@ -7,22 +7,22 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 
 ## 📑 目次
 
-- [事前準備（必須）](#-事前準備必須)
-  - [VS Code のインストール](#1️⃣-vs-code-のインストール)
-  - [VS Code 拡張機能の導入](#2️⃣-vs-code-拡張機能の導入)
-  - [Azure CLI のインストール](#3️⃣-azure-cli-のインストール)
-  - [Git CLI のインストール](#4️⃣-git-cli-のインストール)
-  - [GitHub CLI のインストール](#5️⃣-github-cli-のインストール)
-  - [MCP サーバー (MS Learn) の設定](#6️⃣-mcp-サーバー-ms-learn-の設定)
-  - [準備完了の確認](#️-準備完了の確認)
+- [事前準備（必須）](#事前準備必須)
+  - [VS Code のインストール](#1-vs-code-のインストール)
+  - [VS Code 拡張機能の導入](#2-vs-code-拡張機能の導入)
+  - [Azure CLI のインストール](#3-azure-cli-のインストール)
+  - [Git CLI のインストール](#4-git-cli-のインストール)
+  - [GitHub CLI のインストール](#5-github-cli-のインストール)
+  - [MCP サーバー (MS Learn) の設定](#6-mcp-サーバー-ms-learn-の設定)
+  - [準備完了の確認](#準備完了の確認)
 - [エンハンス設定（上級者向け）](docs/advanced-settings.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
-- [参考リンク](#-参考リンク)
-- [お問い合わせ](#-お問い合わせ)
+- [参考リンク](#参考リンク)
+- [お問い合わせ](#お問い合わせ)
 
 ---
 
-## ✅ 事前準備（必須）
+## 事前準備（必須）
 
 以下が揃っていれば準備完了です。
 
@@ -95,14 +95,14 @@ Workspace Settings（.vscode/settings.json）
 
 > ⚠️ **注意**: GitHub Copilot の利用には[ライセンス](https://github.com/features/copilot)（個人 / Business / Enterprise）が必要です。
 
-### 1️⃣ VS Code のインストール
+### 1. VS Code のインストール
 
 公式サイトからダウンロード・インストール：  
 🔗 https://code.visualstudio.com/
 
 > 💡 インストール時に「**Add to PATH**」にチェックを入れると、ターミナルから `code` コマンドが使えるようになります。
 
-### 2️⃣ VS Code 拡張機能の導入
+### 2. VS Code 拡張機能の導入
 
 以下の拡張機能を VS Code にインストールしてください。
 
@@ -135,7 +135,7 @@ code --install-extension eamodio.gitlens
 
 > 💡 **GitHub Copilot のログイン**: 拡張機能インストール後、VS Code 左下の人型アイコンをクリックして GitHub アカウントでサインインしてください。
 
-### 3️⃣ Azure CLI のインストール
+### 3. Azure CLI のインストール
 
 公式ドキュメントを参照：  
 🔗 https://learn.microsoft.com/ja-jp/cli/azure/install-azure-cli
@@ -153,7 +153,7 @@ az --version
 az login
 ```
 
-### 4️⃣ Git CLI のインストール
+### 4. Git CLI のインストール
 
 公式サイトからダウンロード・インストール：  
 🔗 https://git-scm.com/downloads
@@ -168,7 +168,7 @@ az login
 git --version
 ```
 
-### 5️⃣ GitHub CLI のインストール
+### 5. GitHub CLI のインストール
 
 🔗 https://cli.github.com/
 
@@ -182,7 +182,7 @@ gh --version
 gh auth login
 ```
 
-### 6️⃣ MCP サーバー (MS Learn) の設定
+### 6. MCP サーバー (MS Learn) の設定
 
 Copilot Chat から MS Learn ドキュメントを参照できるようになります。
 
@@ -213,7 +213,7 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 > 💡 **優先順位**: Workspace Settings（`.vscode/mcp.json`）が User Settings より優先されます。
 
-### ✔️ 準備完了の確認
+### 準備完了の確認
 
 以下がすべて OK なら準備完了です。
 
@@ -267,7 +267,7 @@ Copilot Chat で Azure や Bicep について質問し、MS Learn のドキュ�
 
 ---
 
-## 📚 参考リンク
+## 参考リンク
 
 - [Bicep ドキュメント](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/)
 - [GitHub Copilot ドキュメント](https://docs.github.com/ja/copilot)
@@ -276,6 +276,6 @@ Copilot Chat で Azure や Bicep について質問し、MS Learn のドキュ�
 
 ---
 
-## 💬 お問い合わせ
+## お問い合わせ
 
 不明点や追加のご要望があれば、お気軽にお知らせください。
