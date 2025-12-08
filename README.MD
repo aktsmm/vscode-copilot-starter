@@ -20,7 +20,7 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 
 ## 事前準備（必須）
 
-以下が揃っていれば準備完了です。
+以下の手順でセットアップを進めてください。最後の「[準備完了の確認](#準備完了の確認)」で動作確認ができます。
 
 ### 💻 コマンドの実行場所
 
@@ -149,7 +149,8 @@ code --install-extension ms-azuretools.vscode-azureresourcegroups;
 code --install-extension ms-vscode.azurecli;
 code --install-extension redhat.vscode-yaml;
 code --install-extension esbenp.prettier-vscode;
-code --install-extension eamodio.gitlens
+code --install-extension eamodio.gitlens;
+
 ```
 
 ![拡張機能の一括インストール](docs/images/vscode-install-extensions.png)
