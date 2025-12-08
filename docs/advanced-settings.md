@@ -70,7 +70,9 @@ Copilot Chat がファイル編集やターミナル実行を行う際、毎回�
 
 Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Learn MCP サーバーを参照するように設定できます。
 
-### 方法 1: copilot-instructions.md に記載（推奨）
+> 💡 **推奨**: 方法 1 の `copilot-instructions.md` による設定が最もシンプルで効果的です。リポジトリ全体に適用され、チームメンバー全員が同じルールで動作します。
+
+### 方法 1: copilot-instructions.md に記載 ⭐推奨
 
 `.github/copilot-instructions.md` に以下のルールを追加：
 
