@@ -13,7 +13,6 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
   - [CLI ツールのインストール](#3-cli-ツールのインストールazure-cli--git--github-cli)
   - [MCP サーバー (MS Learn) の設定](#4-mcp-サーバー-ms-learn-の設定)
   - [準備完了の確認](#準備完了の確認)
-- [エンハンス設定（上級者向け）](docs/advanced-settings.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
 - [参考リンク](#参考リンク)
 
@@ -41,7 +40,7 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
    - メニュー: **表示** → **ターミナル**
    - コマンドパレット: `Ctrl + Shift + P` → 「Terminal: Create New Terminal」
 
-![VS Code ターミナル](https://code.visualstudio.com/assets/docs/terminal/basics/integrated-terminal.png)
+![VS Code ターミナル](docs/images/vscode-install-extensions.png)
 
 > 💡 **推奨**: VS Code ターミナルを使うと、コード編集とコマンド実行を同じウィンドウで行えて便利です。
 
@@ -166,7 +165,7 @@ code --install-extension eamodio.gitlens
 ![PowerShell 管理者として実行](docs/images/powershell-run-as-admin.png)
 
 ```powershell
-# Azure CLI, Git, GitHub CLI を一括インストール
+# Azure CLI, Git, GitHub CLI を一括インストール（約10分かかります）
 winget install Microsoft.AzureCLI
 winget install Git.Git
 winget install GitHub.cli
