@@ -137,16 +137,18 @@ VS Code を初めて起動すると「Get started with VS Code」画面が表示
 
 **VS Code ターミナル（PowerShell）で実行**（`Ctrl + @` でターミナルを開く）:
 
+以下をコピーして貼り付け、Enter キーを押すと 9 つの拡張機能が順番にインストールされます。
+
 ```powershell
 # 拡張機能を一括インストール
-code --install-extension MS-CEINTL.vscode-language-pack-ja
-code --install-extension ms-azuretools.vscode-bicep
-code --install-extension GitHub.copilot
-code --install-extension GitHub.copilot-chat
-code --install-extension ms-azuretools.vscode-azureresourcegroups
-code --install-extension ms-vscode.azurecli
-code --install-extension redhat.vscode-yaml
-code --install-extension esbenp.prettier-vscode
+code --install-extension MS-CEINTL.vscode-language-pack-ja;
+code --install-extension ms-azuretools.vscode-bicep;
+code --install-extension GitHub.copilot;
+code --install-extension GitHub.copilot-chat;
+code --install-extension ms-azuretools.vscode-azureresourcegroups;
+code --install-extension ms-vscode.azurecli;
+code --install-extension redhat.vscode-yaml;
+code --install-extension esbenp.prettier-vscode;
 code --install-extension eamodio.gitlens
 ```
 
@@ -164,11 +166,11 @@ code --install-extension eamodio.gitlens
 
 ![PowerShell 管理者として実行](docs/images/powershell-run-as-admin.png)
 
+以下をコピーして貼り付け、Enter キーを押すと 3 つのツールが順番にインストールされます（約10分）。
+
 ```powershell
-# Azure CLI, Git, GitHub CLI を一括インストール（約10分かかります）
-winget install Microsoft.AzureCLI
-winget install Git.Git
-winget install GitHub.cli
+# Azure CLI, Git, GitHub CLI を一括インストール
+winget install Microsoft.AzureCLI; winget install Git.Git; winget install GitHub.cli
 ```
 
 > 💡 winget が使えない場合は、各公式サイトからインストーラーをダウンロード:
@@ -182,10 +184,8 @@ winget install GitHub.cli
 **インストール確認 & ログイン**（VS Code ターミナル `Ctrl + @` で実行）:
 
 ```powershell
-# バージョン確認
-az --version
-git --version
-gh --version
+# バージョン確認（3つとも表示されれば OK）
+az --version; git --version; gh --version
 
 # Azure にログイン（対象サブスクリプションにリソース作成権限が必要）
 az login
@@ -193,6 +193,10 @@ az login
 # GitHub にログイン
 gh auth login
 ```
+
+> 💡 `az login` を実行すると、ブラウザまたはサインイン画面が開きます。Azure サブスクリプションに紐づいたアカウントでサインインしてください。
+
+![az login サインイン画面](docs/images/az-login.png)
 
 ### 4. MCP サーバー (MS Learn) の設定
 
