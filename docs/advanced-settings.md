@@ -7,6 +7,7 @@
 ## 📑 目次
 
 - [Copilot ツールの自動承認](#copilot-ツールの自動承認)
+- [MCP サーバーを強制的に使用させる](#mcp-サーバーを強制的に使用させる)
 - [Copilot カスタマイズガイド](#copilot-カスタマイズガイド)
   - [ディレクトリ構造](#ディレクトリ構造)
   - [copilot-instructions.md（リポジトリ全体のルール）](#copilot-instructionsmdリポジトリ全体のルール)
@@ -62,6 +63,107 @@ Copilot Chat がファイル編集やターミナル実行を行う際、毎回�
 ```
 
 > ⚠️ **注意**: `run_in_terminal` や `replace_string_in_file` を自動承認すると、意図しない変更が行われる可能性があります。本番環境への影響があるコマンドは自動承認しないのが安全です。
+
+---
+
+## MCP サーバーを強制的に使用させる
+
+Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Learn MCP サーバーを参照するように設定できます。
+
+### 方法 1: copilot-instructions.md に記載（推奨）
+
+`.github/copilot-instructions.md` に以下のルールを追加：
+
+```markdown
+## MCP ツールの利用
+
+- **Azure / Microsoft / Bicep 製品に関する質問には必ず `mcp_microsoftdocs` ツールを使用して MS Learn から情報を取得すること。**
+- 回答には必ずソース URL を明記する。
+- 対象: Azure, Bicep, ARM, .NET, Microsoft 365, Power Platform, GitHub (Microsoft 関連), VS Code 拡張機能 など。
+```
+
+### 方法 2: Chat Mode で MCP ツールを指定
+
+`.github/copilot-chat-modes/azure.chatmode.md` を作成：
+
+```markdown
+---
+name: "Azure Mode"
+description: "Azure 開発に特化（MS Learn 参照必須）"
+tools:
+  - run_in_terminal
+  - read_file
+  - replace_string_in_file
+  - mcp_microsoftdocs_microsoft_docs_search
+  - mcp_microsoftdocs_microsoft_docs_fetch
+  - mcp_microsoftdocs_microsoft_code_sample_search
+---
+
+# Azure Mode
+
+Azure 関連の開発に特化したモードです。
+
+## ルール
+
+- **必ず MS Learn MCP サーバーを使用して最新ドキュメントを参照すること**
+- 回答にはソース URL を含める
+- Azure CLI / Bicep コードを優先
+
+## MCP ツールの使い分け
+
+| ツール | 用途 |
+|--------|------|
+| `microsoft_docs_search` | ドキュメント検索（概要把握） |
+| `microsoft_docs_fetch` | 特定ページの詳細取得 |
+| `microsoft_code_sample_search` | コードサンプル検索 |
+```
+
+**使い方**: Copilot Chat 画面上部のモードセレクタから「Azure Mode」を選択
+
+### 方法 3: Agent に MCP ツールを組み込む
+
+`.github/agents/azure-expert.agent.md` を作成：
+
+```markdown
+---
+name: "Azure Expert"
+description: "Azure の専門家（MS Learn 参照必須）"
+tools:
+  - run_in_terminal
+  - read_file
+  - replace_string_in_file
+  - mcp_microsoftdocs_microsoft_docs_search
+  - mcp_microsoftdocs_microsoft_docs_fetch
+---
+
+# Azure Expert Agent
+
+あなたは Azure の専門家です。
+
+## 必須ルール
+
+1. **Azure 関連の質問には必ず `mcp_microsoftdocs` ツールで MS Learn を検索すること**
+2. 回答には必ずソース URL を明記
+3. 古い情報や推測で回答しない
+
+## 検索の流れ
+
+1. `microsoft_docs_search` で関連ドキュメントを検索
+2. 必要に応じて `microsoft_docs_fetch` で詳細を取得
+3. 検索結果を元に回答を構成
+```
+
+**使い方**: Copilot Chat で `@azure-expert` と入力
+
+### 確認方法
+
+MCP サーバーが正しく動作しているか確認：
+
+1. Copilot Chat を開く
+2. 「Bicep で App Service を作成する方法」と質問
+3. 回答に `https://learn.microsoft.com/...` のリンクが含まれていれば OK
+
+> 💡 **ヒント**: MCP ツールが使用されると、Copilot Chat の回答に「🔧 Used tools: microsoft_docs_search」のような表示が出ます。
 
 ---
 
