@@ -159,9 +159,21 @@ code --install-extension eamodio.gitlens;
 
 > 💡 **日本語化**: Japanese Language Pack インストール後、VS Code を再起動すると日本語に切り替わります。切り替わらない場合は `Ctrl + Shift + P` → 「Configure Display Language」→「ja」を選択してください。
 
+#### 保存時の自動整形（推奨）
+
+Prettier でファイル保存時に自動整形されるように設定しましょう。
+
+1. `Ctrl + ,` で設定を開く
+2. 「format on save」で検索
+3. **Editor: Format On Save** にチェックを入れる
+
+![Format On Save 設定](docs/images/2025-12-09_03h56_38.png)
+
 > 💡 **GitHub Copilot のログイン**: 拡張機能インストール後、VS Code 左下の人型アイコンをクリックして GitHub アカウントでサインインしてください。
 
 ### 3. CLI ツールのインストール（Azure CLI / Git / GitHub CLI）
+
+> ⚠️ **Azure CLI について**: Azure CLI は Azure リソースの操作に使用します。Azure アカウントがない場合はインストール不要です。
 
 > ⚠️ **管理者権限の PowerShell で実行してください**（VS Code ターミナルではなく）
 
@@ -169,11 +181,18 @@ code --install-extension eamodio.gitlens;
 
 ![PowerShell 管理者として実行](docs/images/powershell-run-as-admin.png)
 
-以下をコピーして貼り付け、Enter キーを押すと 3 つのツールが順番にインストールされます（約 10 分）。
+以下をコピーして貼り付け、Enter キーを押すとツールがインストールされます（約 10 分）。
 
 ```powershell
-# Azure CLI, Git, GitHub CLI を一括インストール
-winget install Microsoft.AzureCLI; winget install Git.Git; winget install GitHub.cli
+# Git をインストール
+winget install Git.Git;
+
+# GitHub CLI をインストール
+winget install GitHub.cli;
+
+# Azure CLI をインストール（Azure を使う場合のみ）
+winget install Microsoft.AzureCLI;
+
 ```
 
 > 💡 winget が使えない場合は、各公式サイトからインストーラーをダウンロード:
@@ -228,10 +247,10 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 ![MCP サーバーインストール画面](docs/images/mcp-install.png)
 
-| 設定レベル             | リンク                                                                                                                                                                                                            | 説明                                                     |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| 設定レベル             | リンク                                                                                                                                                                                                            | 説明                                                                    |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | **User Settings**      | [Install (User)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D)                      | ⭐ **推奨**: 全ワークスペースで有効（Azure/Microsoft 技術を使う人向け） |
-| **Workspace Settings** | [Install (Workspace)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D&scope=workspace) | このプロジェクトのみで有効                  |
+| **Workspace Settings** | [Install (Workspace)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D&scope=workspace) | このプロジェクトのみで有効                                              |
 
 > 💡 **推奨理由**: Azure や Microsoft 製品を扱う場面では、Copilot Chat が MS Learn の最新ドキュメントを参照できると回答精度が大幅に向上します。
 
@@ -297,11 +316,24 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 
 **6. MCP サーバーが有効**
 
-Copilot Chat で Azure や Bicep について質問し、MS Learn のドキュメントが参照されれば OK です。
+Copilot Chat で MCP ツールを呼び出せれば OK です。
 
 1. `Ctrl + Alt + I` で Copilot Chat を開く
-2. 「Bicep でストレージアカウントを作成する方法を教えて」と質問
-3. 回答に MS Learn のリンクが含まれていれば設定完了
+2. 以下の 2 つのプロンプトを比較してみましょう：
+
+   **MCP ツールあり（MS Learn を参照）:**
+
+   ```
+    #MicrosoftDocs Azure ってなに
+   ```
+
+   **MCP ツールなし（通常の Copilot）:**
+
+   ```
+   Azure ってなに
+   ```
+
+3. `#MicrosoftDocs` を入力したパターンで MCP サーバーが呼び出されていれば OK
 
 ---
 
