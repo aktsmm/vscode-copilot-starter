@@ -18,7 +18,6 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 - [エンハンス設定（上級者向け）](docs/advanced-settings.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
 - [参考リンク](#参考リンク)
-- [お問い合わせ](#お問い合わせ)
 
 ---
 
@@ -273,9 +272,3 @@ Copilot Chat で Azure や Bicep について質問し、MS Learn のドキュ�
 - [GitHub Copilot ドキュメント](https://docs.github.com/ja/copilot)
 - [Azure CLI ドキュメント](https://learn.microsoft.com/ja-jp/cli/azure/)
 - [GitHub CLI ドキュメント](https://cli.github.com/manual/)
-
----
-
-## お問い合わせ
-
-不明点や追加のご要望があれば、お気軽にお知らせください。
