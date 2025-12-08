@@ -10,10 +10,8 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 - [事前準備（必須）](#事前準備必須)
   - [VS Code のインストール](#1-vs-code-のインストール)
   - [VS Code 拡張機能の導入](#2-vs-code-拡張機能の導入)
-  - [Azure CLI のインストール](#3-azure-cli-のインストール)
-  - [Git CLI のインストール](#4-git-cli-のインストール)
-  - [GitHub CLI のインストール](#5-github-cli-のインストール)
-  - [MCP サーバー (MS Learn) の設定](#6-mcp-サーバー-ms-learn-の設定)
+  - [CLI ツールのインストール](#3-cli-ツールのインストールazure-cli--git--github-cli)
+  - [MCP サーバー (MS Learn) の設定](#4-mcp-サーバー-ms-learn-の設定)
   - [準備完了の確認](#準備完了の確認)
 - [エンハンス設定（上級者向け）](docs/advanced-settings.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
@@ -159,54 +157,41 @@ code --install-extension eamodio.gitlens
 
 > 💡 **GitHub Copilot のログイン**: 拡張機能インストール後、VS Code 左下の人型アイコンをクリックして GitHub アカウントでサインインしてください。
 
-### 3. Azure CLI のインストール
+### 3. CLI ツールのインストール（Azure CLI / Git / GitHub CLI）
 
-公式ドキュメントを参照：  
-🔗 https://learn.microsoft.com/ja-jp/cli/azure/install-azure-cli
-
-> ⚠️ **管理者権限**: Windows インストーラー（MSI）を使う場合は管理者権限が必要です。  
-> 💡 インストール後は **VS Code を再起動** してください。
-
-**VS Code ターミナル（PowerShell）で実行**:
+**PowerShell で実行**:
 
 ```powershell
-# インストール確認
+# Azure CLI, Git, GitHub CLI を一括インストール
+winget install Microsoft.AzureCLI
+winget install Git.Git
+winget install GitHub.cli
+```
+
+> 💡 winget が使えない場合は、各公式サイトからインストーラーをダウンロード:
+>
+> - Azure CLI: https://learn.microsoft.com/ja-jp/cli/azure/install-azure-cli
+> - Git: https://git-scm.com/downloads
+> - GitHub CLI: https://cli.github.com/
+
+> 💡 インストール後は **VS Code を再起動** してください（PATH を反映するため）。
+
+**インストール確認 & ログイン**:
+
+```powershell
+# バージョン確認
 az --version
+git --version
+gh --version
 
 # Azure にログイン（対象サブスクリプションにリソース作成権限が必要）
 az login
-```
-
-### 4. Git CLI のインストール
-
-公式サイトからダウンロード・インストール：  
-🔗 https://git-scm.com/downloads
-
-> 💡 インストール時に「**Git from the command line and also from 3rd-party software**」を選択してください（PATH に追加されます）。  
-> 💡 インストール後は **VS Code を再起動** してください。
-
-**VS Code ターミナル（PowerShell）で実行**:
-
-```powershell
-# インストール確認
-git --version
-```
-
-### 5. GitHub CLI のインストール
-
-🔗 https://cli.github.com/
-
-**VS Code ターミナル（PowerShell）で実行**:
-
-```powershell
-# インストール確認
-gh --version
 
 # GitHub にログイン
 gh auth login
 ```
 
-### 6. MCP サーバー (MS Learn) の設定
+### 4. MCP サーバー (MS Learn) の設定
 
 Copilot Chat から MS Learn ドキュメントを参照できるようになります。
 
