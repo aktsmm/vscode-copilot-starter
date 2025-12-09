@@ -324,6 +324,18 @@ Copilot Chat で MCP ツールを呼び出せれば OK です。
 
 3. `#MicrosoftDocs` を入力したパターンで MCP サーバーが呼び出されていれば OK
 
+> 💡 **確認ポイント**: MCP ツールが使用されると、回答に以下が含まれます：
+>
+> - 「🔧 Used tools: microsoft_docs_search」のようなツール使用表示
+> - `https://learn.microsoft.com/...` のソース URL
+>
+> **主な MCP ツール名**:
+> | ツール名 | 用途 |
+> |---------|------|
+> | `mcp_microsoftdocs_microsoft_docs_search` | MS Learn ドキュメントを検索 |
+> | `mcp_microsoftdocs_microsoft_docs_fetch` | 特定ページの全文を取得 |
+> | `mcp_microsoftdocs_microsoft_code_sample_search` | コードサンプルを検索 |
+
 ---
 
 ## 補足情報

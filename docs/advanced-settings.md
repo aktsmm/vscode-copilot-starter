@@ -102,6 +102,7 @@ Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Lea
 ```
 
 > 💡 **使い分け**:
+>
 > - **方法 1（ワークスペース）**: チームで共有したいプロジェクト固有のルール → `.github/copilot-instructions.md`
 > - **方法 1b（グローバル）**: 個人の全プロジェクトに適用したいルール → User Settings
 
@@ -135,11 +136,11 @@ MCP サーバーが正しく動作しているか確認：
 
 MS Learn MCP サーバーで使用される主なツール名：
 
-| ツール名 | 用途 |
-|---------|------|
-| `mcp_microsoftdocs_microsoft_docs_search` | MS Learn ドキュメントを検索 |
-| `mcp_microsoftdocs_microsoft_docs_fetch` | 特定の MS Learn ページの全文を取得 |
-| `mcp_microsoftdocs_microsoft_code_sample_search` | コードサンプルを検索 |
+| ツール名                                         | 用途                               |
+| ------------------------------------------------ | ---------------------------------- |
+| `mcp_microsoftdocs_microsoft_docs_search`        | MS Learn ドキュメントを検索        |
+| `mcp_microsoftdocs_microsoft_docs_fetch`         | 特定の MS Learn ページの全文を取得 |
+| `mcp_microsoftdocs_microsoft_code_sample_search` | コードサンプルを検索               |
 
 > 💡 `copilot-instructions.md` でツール使用を強制する際は、`mcp_microsoftdocs` というプレフィックスで指定すると上記すべてのツールが対象になります。
 
