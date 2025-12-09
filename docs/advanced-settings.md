@@ -83,7 +83,7 @@ Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Lea
 {
   "github.copilot.chat.codeGeneration.instructions": [
     {
-      "text": "Azure / Microsoft / Bicep 製品に関する質問には必ず mcp_microsoftdocs ツールを使用して MS Learn から情報を取得すること。回答の冒頭に「#MCP」タグを表示し、必ずソース URL を明記する。"
+      "text": "Azure / Microsoft / Bicep 製品に関する質問には必ず mcp_microsoftdocs ツールを使用して MS Learn から情報を取得すること。回答の冒頭に「#MCP」タグを表示し、必ずソース URL を明記する。対象: Azure, Bicep, ARM, .NET, Microsoft 365, Power Platform, GitHub (Microsoft 関連), VS Code 拡張機能 など。"
     }
   ]
 }
@@ -91,7 +91,7 @@ Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Lea
 
 > 💡 **メリット**: 一度設定すれば、どのプロジェクトでも自動的に MCP サーバーが使用されます。Azure や Microsoft 製品を扱う開発者には必須の設定です。
 
-### 方法 1b: copilot-instructions.md に記載（ワークスペース単位）
+### 方法 2: copilot-instructions.md に記載（ワークスペース単位）
 
 チームで共有したい場合や、特定のプロジェクトでのみ MCP を使用したい場合は、`.github/copilot-instructions.md` に記載します。
 
@@ -104,12 +104,9 @@ Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Lea
 - 対象: Azure, Bicep, ARM, .NET, Microsoft 365, Power Platform, GitHub (Microsoft 関連), VS Code 拡張機能 など。
 ```
 
-> 💡 **使い分け**:
->
-> - **方法 1（グローバル）**: 個人の全プロジェクトに適用 → User Settings（⭐ 推奨）
-> - **方法 1b（ワークスペース）**: チームで共有したいルール → `.github/copilot-instructions.md`
+> 💡 **メリット**: Git で管理してチーム全員で同じルールを共有できます。プロジェクト固有の設定として他のメンバーにも自動適用されます。
 
-### 方法 2: Agent に MCP ツールを組み込む
+### 方法 3: Agent に MCP ツールを組み込む
 
 `.github/agents/azure-expert.agent.md` を作成：
 
@@ -117,15 +114,33 @@ Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Lea
 
 **使い方**: Copilot Chat で `@azure-expert` と入力
 
+> 💡 **メリット**: 必要なときだけ `@azure-expert` で呼び出せます。通常の Copilot と MCP 参照モードを使い分けたい場合に便利です。
+
 ### 確認方法
 
 MCP サーバーが正しく動作しているか確認：
 
-1. Copilot Chat を開く
-2. 「Bicep で App Service を作成する方法」と質問
-3. 回答に `https://learn.microsoft.com/...` のリンクが含まれていれば OK
+1. `Ctrl + Alt + I` で Copilot Chat を開く
+2. 以下の 2 つのプロンプトを比較してみましょう：
 
-> 💡 **ヒント**: MCP ツールが使用されると、Copilot Chat の回答に「🔧 Used tools: microsoft_docs_search」のような表示が出ます。
+   **MCP ツールあり（MS Learn を参照）:**
+
+   ```
+   #MicrosoftDocs Azure ってなに
+   ```
+
+   **MCP ツールなし（通常の Copilot）:**
+
+   ```
+   Azure ってなに
+   ```
+
+3. `#MicrosoftDocs` を入力したパターンで MCP サーバーが呼び出されていれば OK
+
+> 💡 **確認ポイント**: MCP ツールが使用されると、回答に以下が含まれます：
+>
+> - 「🔧 Used tools: microsoft_docs_search」のようなツール使用表示
+> - `https://learn.microsoft.com/...` のソース URL
 
 ### MCP ツール名の例
 
