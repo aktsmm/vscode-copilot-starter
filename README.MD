@@ -38,13 +38,13 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 
 ### 📋 前提条件
 
-| 必要なもの                                                       | 用途                               | 備考                                              |
-| ---------------------------------------------------------------- | ---------------------------------- | ------------------------------------------------- |
-| [GitHub アカウント](https://github.com/signup)                   | Copilot 利用、Git 操作             | 無料で作成可能                                    |
-| [GitHub Copilot ライセンス](https://github.com/features/copilot) | AI コード補完                      | 個人 / Business / Enterprise（有料）              |
-| [Azure アカウント](https://azure.microsoft.com/ja-jp/free/)      | Bicep デプロイ、Azure リソース操作 | 推奨（なくても Bicep の編集・構文チェックは可能） |
+| 必要なもの                                                       | 用途                               | 備考                                                 |
+| ---------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------- |
+| [GitHub アカウント](https://github.com/signup)                   | Copilot 利用、Git 操作             | 無料で作成可能                                       |
+| [GitHub Copilot ライセンス](https://github.com/features/copilot) | AI コード補完                      | Free（無料）/ Pro / Pro+ / Business / Enterprise     |
+| [Azure アカウント](https://azure.microsoft.com/ja-jp/free/)      | Bicep デプロイ、Azure リソース操作 | ⭐ 推奨（なくても Bicep の編集・構文チェックは可能） |
 
-> 💡 **GitHub Copilot Free** も利用可能です（機能制限あり）。詳細は [Copilot 料金ページ](https://github.com/features/copilot) を参照してください。
+> 💡 **GitHub Copilot Free**（$0）で始められます。詳細は [Copilot 料金ページ](https://github.com/features/copilot) を参照。
 
 ### 🎯 準備のゴール
 
@@ -56,8 +56,6 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 | Git 管理                 | Git CLI インストール                          | `git --version` が動く                            |
 | GitHub 操作              | GitHub CLI インストール & `gh auth login`     | `gh auth status` が動く                           |
 | MS Learn 参照            | MCP サーバー設定                              | Copilot Chat で MS Learn が参照される             |
-
-> ⚠️ **注意**: GitHub Copilot の利用には[ライセンス](https://github.com/features/copilot)（個人 / Business / Enterprise）が必要です。
 
 ### 1. VS Code のインストール
 
