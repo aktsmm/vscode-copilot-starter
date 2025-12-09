@@ -2,6 +2,8 @@
 
 VS Code と GitHub Copilot を活用した Azure 開発環境のセットアップガイドです。
 
+> 💻 **対象環境**: 本ガイドは **Windows + PowerShell** 環境向けです。Mac / Linux の場合はコマンドを適宜読み替えてください。
+
 **使いこなすと、こんなことができます：**
 
 - 🤖 **MCP 連携**: MS Learn Docs MCP などを使い、公式ドキュメントを参照しながら正確な回答を得る
@@ -27,6 +29,7 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 - [補足情報](#補足情報)
   - [コマンドの実行場所](#-コマンドの実行場所)
   - [VS Code 設定の優先順位](#-vs-code-設定の優先順位)
+- [プロキシ環境での設定](docs/proxy-settings.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
 - [参考リンク](#参考リンク)
 
@@ -117,7 +120,7 @@ VS Code を初めて起動すると「Get started with VS Code」画面が表示
 
 ### 2. VS Code 拡張機能の導入
 
-以下の拡張機能を VS Code にインストールしてください。
+以下の拡張機能を VS Code にインストールしてください（**下のコマンドで一括インストール可能**）。
 
 | 拡張機能                                                                                                        | 用途                                                  |
 | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
@@ -312,13 +315,13 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 
 Copilot Chat で MCP ツールを呼び出せれば OK です。
 
-1. `Ctrl + Alt + I` で Copilot Chat を開く
+1. `Ctrl + Shift + I` で Copilot Chat を開く（または右側の Copilot アイコンをクリック）
 2. 以下の 2 つのプロンプトを比較してみましょう：
 
    **MCP ツールあり（MS Learn を参照）:**
 
    ```
-    #MicrosoftDocs Azure ってなに
+   #MicrosoftDocs Azure ってなに
    ```
 
    **MCP ツールなし（通常の Copilot）:**
