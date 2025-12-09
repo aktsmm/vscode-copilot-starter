@@ -29,8 +29,8 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 - [補足情報](#補足情報)
   - [コマンドの実行場所](#-コマンドの実行場所)
   - [VS Code 設定の優先順位](#-vs-code-設定の優先順位)
-- [GitHub Copilot プラン比較ガイド](docs/copilot-plans.md)
-- [プロキシ環境での設定](docs/proxy-settings.md)
+  - [GitHub Copilot プラン比較ガイド](docs/copilot-plans.md)
+  - [プロキシ環境での設定（プレビュー）](docs/proxy-settings.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
 - [参考リンク](#参考リンク)
 
@@ -44,6 +44,7 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 
 | 必要なもの                                                       | 用途                               | 備考                                                 |
 | ---------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------- |
+| **Windows 10/11**                                                | 本ガイドの対象 OS                  | Mac / Linux は適宜読み替え                           |
 | [GitHub アカウント](https://github.com/signup)                   | Copilot 利用、Git 操作             | 無料で作成可能                                       |
 | [GitHub Copilot ライセンス](https://github.com/features/copilot) | AI コード補完・Chat・Agent         | Free（無料）/ Pro / Pro+ / Business / Enterprise     |
 | [Azure アカウント](https://azure.microsoft.com/ja-jp/free/)      | Bicep デプロイ、Azure リソース操作 | ⭐ 推奨（なくても Bicep の編集・構文チェックは可能） |
@@ -380,6 +381,18 @@ Workspace Settings（.vscode/settings.json）
 >
 > - **User Settings**: 個人の好み（フォントサイズ、テーマなど）
 > - **Workspace Settings**: プロジェクト固有のルール（フォーマッター設定など）→ Git 管理してチームで共有
+
+### 📖 GitHub Copilot プラン比較ガイド
+
+Free / Pro / Pro+ / Business / Enterprise の違いや、Agent モードと Coding Agent の違いを解説しています。
+
+🔗 [GitHub Copilot プラン比較ガイド](docs/copilot-plans.md)
+
+### 🌐 プロキシ環境での設定（プレビュー）
+
+企業ネットワークなどプロキシ環境での設定方法をまとめています。
+
+🔗 [プロキシ環境での設定](docs/proxy-settings.md)
 
 ---
 
