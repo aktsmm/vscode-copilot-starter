@@ -84,30 +84,6 @@ Bicep による IaC（Infrastructure as Code）開発を AI アシスタント�
 
 > 💡 **PATH の反映**: CLI ツールをインストールした後は **VS Code を再起動** してください。PATH が反映されず、コマンドが見つからない場合があります。
 
-### 📁 VS Code 設定の優先順位
-
-本ガイドでは「User Settings」と「Workspace Settings」の 2 種類の設定場所が登場します。
-
-| 設定場所               | ファイル                            | 適用範囲                         |
-| ---------------------- | ----------------------------------- | -------------------------------- |
-| **User Settings**      | `%APPDATA%\Code\User\settings.json` | 全ワークスペース共通（個人設定） |
-| **Workspace Settings** | `.vscode/settings.json`             | このプロジェクトのみ             |
-
-**優先順位**: Workspace Settings が User Settings より優先されます。
-
-```
-User Settings（グローバル）
-    ↓ 上書き
-Workspace Settings（.vscode/settings.json）
-```
-
-> 💡 **使い分けのコツ**:
->
-> - **User Settings**: 個人の好み（フォントサイズ、テーマなど）
-> - **Workspace Settings**: プロジェクト共通ルール（フォーマッター、Bicep 設定など）
->
-> チームで共有する `.vscode/settings.json` には、プロジェクトに必要な設定だけ書くのがベストです。
-
 公式サイトからダウンロード・インストール：  
 🔗 https://code.visualstudio.com/
 
@@ -263,7 +239,7 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 | 設定レベル             | リンク                                                                                                                                                                                                            | 説明                                                                    |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | **User Settings**      | [Install (User)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D)                      | ⭐ **推奨**: 全ワークスペースで有効（Azure/Microsoft 技術を使う人向け） |
-| **Workspace Settings** | [Install (Workspace)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D&scope=workspace) | このプロジェクトのみで有効                                              |
+| **Workspace Settings** | [Install (Workspace)](https://insiders.vscode.dev/redirect/mcp/install?name=MicrosoftDocs&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D&scope=workspace) | 現在のワークスペースのみで有効（Git 管理してチーム共有可能）            |
 
 > 💡 **推奨理由**: Azure や Microsoft 製品を扱う場面では、Copilot Chat が MS Learn の最新ドキュメントを参照できると回答精度が大幅に向上します。
 
@@ -271,7 +247,7 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 #### 方法 2: 手動設定
 
-**Workspace Settings（このプロジェクトのみ）**
+**Workspace Settings（現在のワークスペースのみ）**
 
 `.vscode/mcp.json` を作成し、以下の内容をコピー：  
 📄 [samples/mcp-workspace.json](samples/mcp-workspace.json)
@@ -388,10 +364,10 @@ Copilot Chat で MCP ツールを呼び出せれば OK です。
 
 本ガイドでは「User Settings」と「Workspace Settings」の 2 種類の設定場所が登場します。
 
-| 設定場所               | ファイル                            | 適用範囲                         |
-| ---------------------- | ----------------------------------- | -------------------------------- |
-| **User Settings**      | `%APPDATA%\Code\User\settings.json` | 全ワークスペース共通（個人設定） |
-| **Workspace Settings** | `.vscode/settings.json`             | このプロジェクトのみ             |
+| 設定場所               | ファイル                            | 適用範囲                                     |
+| ---------------------- | ----------------------------------- | -------------------------------------------- |
+| **User Settings**      | `%APPDATA%\Code\User\settings.json` | 全ワークスペース共通（個人設定）             |
+| **Workspace Settings** | `.vscode/settings.json`             | 現在開いているフォルダ（ワークスペース）のみ |
 
 **優先順位**: Workspace Settings が User Settings より優先されます。
 
@@ -404,7 +380,7 @@ Workspace Settings（.vscode/settings.json）
 > 💡 **使い分けのコツ**:
 >
 > - **User Settings**: 個人の好み（フォントサイズ、テーマなど）
-> - **Workspace Settings**: プロジェクト共通ルール（フォーマッター、Bicep 設定など）
+> - **Workspace Settings**: プロジェクト固有のルール（フォーマッター、Bicep 設定など）→ Git 管理してチームで共有
 >
 > チームで共有する `.vscode/settings.json` には、プロジェクトに必要な設定だけ書くのがベストです。
 
