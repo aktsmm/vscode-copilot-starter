@@ -389,12 +389,10 @@ User Settings（グローバル）
 Workspace Settings（.vscode/settings.json）
 ```
 
-> 💡 **使い分けのコツ**:
+> 💡 **使い分けの一例**:
 >
 > - **User Settings**: 個人の好み（フォントサイズ、テーマなど）
-> - **Workspace Settings**: プロジェクト固有のルール（フォーマッター、Bicep 設定など）→ Git 管理してチームで共有
->
-> チームで共有する `.vscode/settings.json` には、プロジェクトに必要な設定だけ書くのがベストです。
+> - **Workspace Settings**: プロジェクト固有のルール（フォーマッター設定など）→ Git 管理してチームで共有
 
 ---
 
