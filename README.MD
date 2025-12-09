@@ -29,6 +29,7 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 - [補足情報](#補足情報)
   - [コマンドの実行場所](#-コマンドの実行場所)
   - [VS Code 設定の優先順位](#-vs-code-設定の優先順位)
+- [GitHub Copilot プラン比較ガイド](docs/copilot-plans.md)
 - [プロキシ環境での設定](docs/proxy-settings.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
 - [参考リンク](#参考リンク)
@@ -44,21 +45,24 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 | 必要なもの                                                       | 用途                               | 備考                                                 |
 | ---------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------- |
 | [GitHub アカウント](https://github.com/signup)                   | Copilot 利用、Git 操作             | 無料で作成可能                                       |
-| [GitHub Copilot ライセンス](https://github.com/features/copilot) | AI コード補完                      | Free（無料）/ Pro / Pro+ / Business / Enterprise     |
+| [GitHub Copilot ライセンス](https://github.com/features/copilot) | AI コード補完・Chat・Agent         | Free（無料）/ Pro / Pro+ / Business / Enterprise     |
 | [Azure アカウント](https://azure.microsoft.com/ja-jp/free/)      | Bicep デプロイ、Azure リソース操作 | ⭐ 推奨（なくても Bicep の編集・構文チェックは可能） |
 
-> 💡 **GitHub Copilot Free**（$0）で始められます（回数制限あり・お試し向け）。詳細は [Copilot 料金ページ](https://github.com/features/copilot) を参照。
+> 💡 **GitHub Copilot Free**（$0）で始められます。本ガイドで主に使う **Agent モード**（IDE 内）は Free でも利用可能（50 回/月）。詳細は [Copilot 料金ページ](https://github.com/features/copilot) を参照。
+>
+> 📖 **プラン比較・エージェント機能の違い**: [GitHub Copilot プラン比較ガイド](docs/copilot-plans.md) を参照。
 
 ### 🎯 準備のゴール
 
-| 目的                     | 作業内容                                      | 判定基準                                          |
-| ------------------------ | --------------------------------------------- | ------------------------------------------------- |
-| VS Code での Bicep 開発  | VS Code インストール & Bicep 拡張機能導入     | `.bicep` ファイルでシンタックスハイライトされる   |
-| Copilot によるコード補完 | GitHub Copilot 拡張機能導入 & GitHub ログイン | コメントを書くと補完が動く                        |
-| Azure 操作               | Azure CLI インストール & `az login`           | `az login` でログインでき、リソース作成権限がある |
-| Git 管理                 | Git CLI インストール                          | `git --version` が動く                            |
-| GitHub 操作              | GitHub CLI インストール & `gh auth login`     | `gh auth status` が動く                           |
-| MS Learn 参照            | MCP サーバー設定                              | Copilot Chat で MS Learn が参照される             |
+| 目的                     | 作業内容                                      | 判定基準                                              |
+| ------------------------ | --------------------------------------------- | ----------------------------------------------------- |
+| VS Code での Bicep 開発  | VS Code インストール & Bicep 拡張機能導入     | `.bicep` ファイルでシンタックスハイライトされる       |
+| Copilot によるコード補完 | GitHub Copilot 拡張機能導入 & GitHub ログイン | コメントを書くと補完が動く                            |
+| Copilot Chat / Agent     | GitHub Copilot Chat 拡張機能導入              | Chat パネルで質問・Agent モードでファイル編集ができる |
+| Azure 操作               | Azure CLI インストール & `az login`           | `az login` でログインでき、リソース作成権限がある     |
+| Git 管理                 | Git CLI インストール                          | `git --version` が動く                                |
+| GitHub 操作              | GitHub CLI インストール & `gh auth login`     | `gh auth status` が動く                               |
+| MS Learn 参照            | MCP サーバー設定                              | Copilot Chat で MS Learn が参照される                 |
 
 ### 1. VS Code のインストール
 
