@@ -145,6 +145,8 @@ Prettier でファイル保存時に自動整形されるように設定しま�
 
 > 💡 **GitHub Copilot のログイン**: 拡張機能インストール後、VS Code 左下の人型アイコンをクリックして GitHub アカウントでサインインしてください。
 
+> 💡 **Copilot 関連の追加拡張機能について**: GitHub Copilot for Azure など追加の拡張機能もありますが、インストール時に設定ファイル（`.vscode/mcp.json` 等）が自動生成されることがあります。上記の拡張機能だけで十分に Copilot を活用できます。
+
 ### 3. CLI ツールのインストール（Azure CLI / Git / GitHub CLI）
 
 > ⚠️ **Azure CLI について**: Azure CLI は Azure リソースの操作に使用します。Azure アカウントがない場合はインストール不要ですが、**Bicep テンプレートのデプロイができません**（構文チェックや編集は可能）。
