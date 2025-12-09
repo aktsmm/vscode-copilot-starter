@@ -229,7 +229,8 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 > 📖 詳細: [MS Learn MCP Server - GitHub](https://github.com/microsoftdocs/mcp)
 
-#### 方法 2: 手動設定
+<details>
+<summary>方法 2: 手動設定（クリックで展開）</summary>
 
 **Workspace Settings（現在のワークスペースのみ）**
 
@@ -242,6 +243,8 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 📄 [samples/mcp-user-settings.json](samples/mcp-user-settings.json)
 
 > 💡 **優先順位**: Workspace Settings（`.vscode/mcp.json`）が User Settings より優先されます。
+
+</details>
 
 ### 準備完了の確認
 
