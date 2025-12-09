@@ -14,7 +14,6 @@
   - [Instructions（ドメイン指示）](#instructionsドメイン指示)
   - [Prompts（プロンプトテンプレート）](#promptsプロンプトテンプレート)
   - [Agents（カスタムエージェント）](#agentsカスタムエージェント)
-  - [Chat Modes（チャットモード）](#chat-modesチャットモード)
 - [推奨 VS Code 設定](#推奨-vs-code-設定)
 
 ---
@@ -167,8 +166,6 @@ GitHub Copilot の動作をリポジトリ固有にカスタマイズできま�
 ├── copilot-instructions.md      # リポジトリ全体のルール（必須）
 ├── agents/                       # カスタムエージェント定義
 │   └── *.agent.md
-├── copilot-chat-modes/           # チャットモード定義
-│   └── *.chatmode.md
 ├── instructions/                 # ドメイン固有の指示
 │   └── *.instructions.md
 └── prompts/                      # 再利用可能なプロンプト
@@ -209,7 +206,7 @@ GitHub Copilot の動作をリポジトリ固有にカスタマイズできま�
 
 ### Agents（カスタムエージェント）
 
-特定のタスクに特化したエージェントを定義できます。
+特定のタスクに特化したエージェントを定義できます。通常の Copilot とは別の「専門家」として振る舞わせることができます。
 
 **設定場所**: `.github/agents/*.agent.md`
 
@@ -219,19 +216,39 @@ GitHub Copilot の動作をリポジトリ固有にカスタマイズできま�
 
 **使い方**: Copilot Chat で `@bicep-expert` と入力
 
-### Chat Modes（チャットモード）
+#### こんなときに便利
 
-> ⚠️ **注意**: Chat Modes は将来的に Agents に統合される可能性があります。新規作成は Agents（`.agent.md`）の使用を推奨します。
+| ユースケース | Agent 例 | 説明 |
+|-------------|---------|------|
+| **ドキュメント参照を強制** | `@azure-expert` | MS Learn MCP を必ず使って回答させる |
+| **コードレビュー** | `@reviewer` | セキュリティやベストプラクティスの観点でレビュー |
+| **特定言語の専門家** | `@bicep-expert` | Bicep の書き方やパターンに詳しい専門家 |
+| **ドキュメント作成** | `@tech-writer` | README や ADR を書くときのアシスタント |
+| **テスト作成** | `@tester` | ユニットテストやE2Eテストの作成支援 |
 
-Copilot Chat の動作モードをカスタマイズできます。
+#### Agent の基本構造
 
-**設定場所**: `.github/copilot-chat-modes/*.chatmode.md`
+```markdown
+---
+name: "Agent Name"
+description: "エージェントの説明"
+tools:
+  - read_file
+  - replace_string_in_file
+  - mcp_microsoftdocs_microsoft_docs_search
+---
 
-**例**: `.github/copilot-chat-modes/infra.chatmode.md`
+# Agent Name
 
-📄 [samples/infra.chatmode.md](../samples/infra.chatmode.md)
+あなたは〇〇の専門家です。
 
-**使い方**: Copilot Chat のモードセレクタから選択
+## 必須ルール
+
+1. 〇〇すること
+2. 〇〇しないこと
+```
+
+> 💡 **ポイント**: `tools` で使用するツールを明示すると、Agent がそのツールを積極的に使うようになります。
 
 ---
 
