@@ -44,7 +44,7 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 | [GitHub Copilot ライセンス](https://github.com/features/copilot) | AI コード補完                      | Free（無料）/ Pro / Pro+ / Business / Enterprise     |
 | [Azure アカウント](https://azure.microsoft.com/ja-jp/free/)      | Bicep デプロイ、Azure リソース操作 | ⭐ 推奨（なくても Bicep の編集・構文チェックは可能） |
 
-> 💡 **GitHub Copilot Free**（$0）で始められます。詳細は [Copilot 料金ページ](https://github.com/features/copilot) を参照。
+> 💡 **GitHub Copilot Free**（$0）で始められます（回数制限あり・お試し向け）。詳細は [Copilot 料金ページ](https://github.com/features/copilot) を参照。
 
 ### 🎯 準備のゴール
 
