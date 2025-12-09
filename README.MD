@@ -77,7 +77,7 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
    - メニュー: **表示** → **ターミナル**
    - コマンドパレット: `Ctrl + Shift + P` → 「Terminal: Create New Terminal」
 
-![VS Code ターミナル](docs/images/vscode-install-extensions.png)
+<img src="docs/images/vscode-install-extensions.png" width="70%">
 
 > ⭐ **推奨**: VS Code ターミナルを使うと、コード編集とコマンド実行を同じウィンドウで行えて便利です。
 
@@ -113,7 +113,7 @@ VS Code を初めて起動すると「Get started with VS Code」画面が表示
 2. サインイン完了後、右側に **Copilot Chat パネル** が表示されます
 3. 残りの項目（テーマ選択など）は任意でスキップ可能
 
-![VS Code 初回起動画面](docs/images/vscode-get-started.png)
+<img src="docs/images/vscode-get-started.png" width="70%">
 
 > 💡 **ポイント**: GitHub にサインインすると、右側に「Build with Agent」パネルが表示され、Copilot Chat が使えるようになります。
 
@@ -151,7 +151,7 @@ code --install-extension eamodio.gitlens;
 
 ```
 
-![拡張機能の一括インストール](docs/images/vscode-install-extensions.png)
+<img src="docs/images/vscode-install-extensions.png" width="70%">
 
 > 💡 **日本語化**: Japanese Language Pack インストール後、VS Code を再起動すると日本語に切り替わります。切り替わらない場合は `Ctrl + Shift + P` → 「Configure Display Language」→「ja」を選択してください。
 
@@ -163,7 +163,7 @@ Prettier でファイル保存時に自動整形されるように設定しま�
 2. 「format on save」で検索
 3. **Editor: Format On Save** にチェックを入れる
 
-![Format On Save 設定](docs/images/2025-12-09_03h56_38.png)
+<img src="docs/images/2025-12-09_03h56_38.png" width="70%">
 
 > 💡 **GitHub Copilot のログイン**: 拡張機能インストール後、VS Code 左下の人型アイコンをクリックして GitHub アカウントでサインインしてください。
 
@@ -175,7 +175,7 @@ Prettier でファイル保存時に自動整形されるように設定しま�
 
 スタートメニュー → 「PowerShell」を右クリック → **「管理者として実行」** で開いてください。
 
-![PowerShell 管理者として実行](docs/images/powershell-run-as-admin.png)
+<img src="docs/images/powershell-run-as-admin.png" width="70%">
 
 以下をコピーして貼り付け、Enter キーを押すとツールがインストールされます（約 15 分）。
 
@@ -219,7 +219,7 @@ gh auth login
 >
 > ⚠️ サインイン画面がバックグラウンドで表示されていることがあるので、見当たらない場合はタスクバーを確認してください。
 
-![az login サインイン画面](docs/images/az-login.png)
+<img src="docs/images/az-login.png" width="70%">
 
 > 💡 `gh auth login` を実行すると、対話形式で認証方法を選択します：
 >
@@ -231,7 +231,7 @@ gh auth login
 > 6. ブラウザが開くので、コードを入力して認証完了
 > 7. ターミナルに `✓ Logged in as <ユーザー名>` と表示されれば成功
 
-![gh auth login 認証画面](docs/images/gh-auth-login.png)
+<img src="docs/images/gh-auth-login.png" width="70%">
 
 ### 4. MCP サーバー (MS Learn) の設定
 
@@ -241,7 +241,7 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 以下のリンクをクリックすると、VS Code が開いてインストール画面が表示されます。**Install** ボタンをクリックして設定完了です。
 
-![MCP サーバーインストール画面](docs/images/mcp-install.png)
+<img src="docs/images/mcp-install.png" width="70%">
 
 | 設定レベル             | リンク                                                                                                                                                                                                            | 説明                                                                    |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
@@ -365,7 +365,7 @@ Copilot Chat で MCP ツールを呼び出せれば OK です。
    - メニュー: **表示** → **ターミナル**
    - コマンドパレット: `Ctrl + Shift + P` → 「Terminal: Create New Terminal」
 
-![VS Code ターミナル](docs/images/vscode-install-extensions.png)
+<img src="docs/images/vscode-install-extensions.png" width="70%">
 
 > ⭐ **推奨**: VS Code ターミナルを使うと、コード編集とコマンド実行を同じウィンドウで行えて便利です。
 
