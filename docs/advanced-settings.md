@@ -72,7 +72,7 @@ Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Lea
 
 > 💡 **推奨**: 方法 1 の `copilot-instructions.md` による設定が最もシンプルで効果的です。リポジトリ全体に適用され、チームメンバー全員が同じルールで動作します。
 
-### 方法 1: copilot-instructions.md に記載 ⭐ 推奨
+### 方法 1: copilot-instructions.md に記載 ⭐ 推奨（ワークスペース単位）
 
 `.github/copilot-instructions.md` に以下のルールを追加：
 
@@ -83,6 +83,27 @@ Copilot Chat が Azure や Microsoft 関連の質問に対して、必ず MS Lea
 - 回答には必ずソース URL を明記する。
 - 対象: Azure, Bicep, ARM, .NET, Microsoft 365, Power Platform, GitHub (Microsoft 関連), VS Code 拡張機能 など。
 ```
+
+### 方法 1b: User Settings に記載（グローバル・全ワークスペース共通）
+
+すべてのワークスペースで MCP サーバーを強制的に使用させたい場合は、User Settings に設定します。
+
+1. `Ctrl + Shift + P` → `Preferences: Open User Settings (JSON)` を開く
+2. 以下を追加：
+
+```json
+{
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "text": "Azure / Microsoft / Bicep 製品に関する質問には必ず mcp_microsoftdocs ツールを使用して MS Learn から情報を取得すること。回答には必ずソース URL を明記する。"
+    }
+  ]
+}
+```
+
+> 💡 **使い分け**:
+> - **方法 1（ワークスペース）**: チームで共有したいプロジェクト固有のルール → `.github/copilot-instructions.md`
+> - **方法 1b（グローバル）**: 個人の全プロジェクトに適用したいルール → User Settings
 
 ### 方法 2: Chat Mode で MCP ツールを指定
 
@@ -109,6 +130,18 @@ MCP サーバーが正しく動作しているか確認：
 3. 回答に `https://learn.microsoft.com/...` のリンクが含まれていれば OK
 
 > 💡 **ヒント**: MCP ツールが使用されると、Copilot Chat の回答に「🔧 Used tools: microsoft_docs_search」のような表示が出ます。
+
+### MCP ツール名の例
+
+MS Learn MCP サーバーで使用される主なツール名：
+
+| ツール名 | 用途 |
+|---------|------|
+| `mcp_microsoftdocs_microsoft_docs_search` | MS Learn ドキュメントを検索 |
+| `mcp_microsoftdocs_microsoft_docs_fetch` | 特定の MS Learn ページの全文を取得 |
+| `mcp_microsoftdocs_microsoft_code_sample_search` | コードサンプルを検索 |
+
+> 💡 `copilot-instructions.md` でツール使用を強制する際は、`mcp_microsoftdocs` というプレフィックスで指定すると上記すべてのツールが対象になります。
 
 ---
 

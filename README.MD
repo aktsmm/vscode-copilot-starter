@@ -170,7 +170,7 @@ Prettier でファイル保存時に自動整形されるように設定しま�
 
 ![PowerShell 管理者として実行](docs/images/powershell-run-as-admin.png)
 
-以下をコピーして貼り付け、Enter キーを押すとツールがインストールされます（約 10 分）。
+以下をコピーして貼り付け、Enter キーを押すとツールがインストールされます（約 15 分）。
 
 ```powershell
 # Git をインストール
