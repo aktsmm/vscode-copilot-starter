@@ -74,14 +74,14 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
 
 インストール時に以下のオプションを選択してください（※英語環境での表記）：
 
-| オプション                                                                 |  推奨   | 説明                                              |
-| -------------------------------------------------------------------------- | :-----: | ------------------------------------------------- |
-| Add "Open with Code" action to Windows Explorer **file** context menu      |   ✅    | ファイル右クリック →「Code で開く」               |
-| Add "Open with Code" action to Windows Explorer **directory** context menu |   ✅    | フォルダ右クリック →「Code で開く」               |
-| Register Code as an editor for supported file types                        |   ✅    | テキストファイルをダブルクリックで VS Code が開く |
-| **Add to PATH**                                                            | ✅ 必須 | ターミナルから `code` コマンドが使える            |
+| オプション                                                                 |  推奨   | 説明                                                                |
+| -------------------------------------------------------------------------- | :-----: | ------------------------------------------------------------------- |
+| Add "Open with Code" action to Windows Explorer **file** context menu      |   ✅    | ファイル右クリック →「Code で開く」                                 |
+| Add "Open with Code" action to Windows Explorer **directory** context menu |   ✅    | フォルダ右クリック →「Code で開く」                                 |
+| Register Code as an editor for supported file types                        |  任意   | テキストファイルをダブルクリックで VS Code が開く（好みに合わせて） |
+| **Add to PATH**                                                            | ✅ 必須 | ターミナルから `code` コマンドが使える                              |
 
-> 💡 **Add to PATH** は必須です。これがないと拡張機能の一括インストールコマンドが動きません。
+> 💡 **Add to PATH** は超必須です。これがないと拡張機能の一括インストールコマンドが動きません。
 
 #### 初回起動時の設定
 
