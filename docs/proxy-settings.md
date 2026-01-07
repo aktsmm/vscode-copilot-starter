@@ -171,6 +171,8 @@ $env:HTTPS_PROXY = "http://username:password@proxy.example.com:8080"
 
 ## 関連ドキュメント
 
+- [ファイアウォール・通信要件](network-requirements.md) - 許可すべきエンドポイント一覧
 - [VS Code Network Settings](https://code.visualstudio.com/docs/setup/network)
 - [Git プロキシ設定](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpproxy)
 - [Azure CLI プロキシ設定](https://learn.microsoft.com/ja-jp/cli/azure/use-cli-effectively#work-behind-a-proxy)
+- [README に戻る](../README.MD)
