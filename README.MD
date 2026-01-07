@@ -30,7 +30,9 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
   - [コマンドの実行場所](#-コマンドの実行場所)
   - [VS Code 設定の優先順位](#-vs-code-設定の優先順位)
   - [GitHub Copilot プラン比較ガイド](docs/copilot-plans.md)
+  - [組織ポリシーによる機能制限](docs/organization-policies.md)
   - [プロキシ環境での設定（プレビュー）](docs/proxy-settings.md)
+  - [ファイアウォール・通信要件](docs/network-requirements.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
 - [参考リンク](#参考リンク)
 
@@ -253,6 +255,11 @@ Copilot Chat から MS Learn ドキュメントを参照できるようになり
 
 </details>
 
+> ⚠️ **Organization ポリシーで MCP が制限されている場合**
+>
+> 企業や組織で管理されている環境では、MCP サーバーへのアクセスがポリシーで制限されていることがあります。  
+> 設定 → `Chat > Mcp: Access` が「**organization によって管理されています**」と表示され、`none` に固定されている場合は MCP サーバーを利用できません。この場合は組織の IT 管理者に相談してください。
+
 ### 準備完了の確認
 
 以下がすべて OK なら準備完了です。
@@ -399,6 +406,12 @@ Free / Pro / Pro+ / Business / Enterprise の違いや、Agent モードと Codi
 企業ネットワークなどプロキシ環境での設定方法をまとめています。
 
 🔗 [プロキシ環境での設定](docs/proxy-settings.md)
+
+### 🔒 ファイアウォール・通信要件
+
+Azure CLI、GitHub Copilot、VS Code などの通信先エンドポイントをまとめています。ファイアウォールの許可リスト設定時に参照してください。
+
+🔗 [ファイアウォール・通信要件](docs/network-requirements.md)
 
 ---
 
