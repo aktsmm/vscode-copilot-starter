@@ -31,6 +31,7 @@ VS Code と GitHub Copilot を活用した Azure 開発環境のセットアッ�
   - [VS Code 設定の優先順位](#-vs-code-設定の優先順位)
   - [GitHub Copilot プラン比較ガイド](docs/copilot-plans.md)
   - [組織ポリシーによる機能制限](docs/organization-policies.md)
+  - [Azure CLI の権限とロール](docs/azure-permissions.md)
   - [プロキシ環境での設定（プレビュー）](docs/proxy-settings.md)
   - [ファイアウォール・通信要件](docs/network-requirements.md)
 - [Git & GitHub 基礎ガイド](docs/git-basics.md)
@@ -204,6 +205,8 @@ gh auth login
 > 💡 `az login` を実行すると、ブラウザまたはサインイン画面が開きます。Azure サブスクリプションに紐づいたアカウントでサインインしてください。ログイン完了後の画面では「**いいえ、このアプリのみにサインインします**」を選択しておくと無難です。
 >
 > ⚠️ サインイン画面がバックグラウンドで表示されていることがあるので、見当たらない場合はタスクバーを確認してください。
+>
+> 📖 **権限エラーが出る場合**: [Azure CLI の権限とロールについて](docs/azure-permissions.md) を参照してください。
 
 <img src="docs/images/az-login.png" width="70%">
 
