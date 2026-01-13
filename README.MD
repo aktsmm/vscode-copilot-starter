@@ -195,6 +195,9 @@ az --version; git --version; gh --version
 # Azure CLI を最新版に更新
 az upgrade
 
+# Bicep CLI をインストール（Bicep ファイルをデプロイする場合）
+az bicep install
+
 # Azure にログイン（対象サブスクリプションにリソース作成権限が必要）
 az login
 
